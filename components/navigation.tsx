@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -23,9 +24,15 @@ export function Navigation() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-primary">Afternuun</div>
-            <span className="hidden text-sm text-muted-foreground sm:inline">Indonesia</span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-MzAHuXBLeQX7Rh65v75rErZVIhcTUT.png"
+              alt="Afternuun Indonesia"
+              width={48}
+              height={48}
+              className="h-12 w-12"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
