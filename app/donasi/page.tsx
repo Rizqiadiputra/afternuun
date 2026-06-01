@@ -55,10 +55,10 @@ const impactAreas = [
   }
 ]
 
-export const metadata = {
-  title: 'Donasi & Sponsor - Afternuun Indonesia',
-  description: 'Dukung gerakan budaya Afternuun Indonesia melalui berbagai metode donasi dan sponsor.'
-}
+// export const metadata = {
+//   title: 'Donasi & Sponsor - Afternuun Indonesia',
+//   description: 'Dukung gerakan budaya Afternuun Indonesia melalui berbagai metode donasi dan sponsor.'
+// }
 
 export default function Donasi() {
   const [copiedMethod, setCopiedMethod] = useState<string | null>(null)
