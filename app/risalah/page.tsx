@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Calendar, ArrowRight, BookOpen, FileText } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 const articles = [
@@ -130,6 +131,10 @@ const researchPapers = [
 function RisalahContent() {
   const [activeTab, setActiveTab] = useState('articles')
 
+  const getSlug = (title: string) => {
+    return title.toLowerCase().replace(/[&\s:,.?!]/g, '-').replace(/-+/g, '-').replace(/-$/, '')
+  }
+
   return (
     <>
       <Navigation />
@@ -183,10 +188,10 @@ function RisalahContent() {
             <div className="mx-auto max-w-4xl">
               <div className="space-y-6 mb-12">
                 {articles.map((article) => (
-                  <Card
-                    key={article.id}
-                    className="border-primary/20 hover:shadow-lg transition-all cursor-pointer group overflow-hidden md:flex"
-                  >
+                  <Link key={article.id} href={`/risalah/${getSlug(article.title)}`}>
+                    <Card
+                      className="border-primary/20 hover:shadow-lg transition-all cursor-pointer group overflow-hidden md:flex"
+                    >
                     {article.image && (
                       <div className="relative h-48 w-full md:h-auto md:w-48 flex-shrink-0">
                         <Image
@@ -234,6 +239,7 @@ function RisalahContent() {
                       </CardContent>
                     </div>
                   </Card>
+                  </Link>
                 ))}
               </div>
 
