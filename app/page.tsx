@@ -131,14 +131,14 @@ export default function Home() {
                   <div className="relative h-48 w-full overflow-hidden">
                     <NextImage
                       src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600"
-                      alt="Festival Seni Jawa"
+                      alt="Festival Seni"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform"
                     />
                   </div>
                   <CardHeader>
                     <CardTitle className="text-foreground group-hover:text-primary transition-colors">
-                      Festival Seni Jawa: Lintas Generasi
+                      Festival Seni: Lintas Generasi
                     </CardTitle>
                     <CardDescription>
                       Festival seni tiga hari dengan pertunjukan wayang, tari, musik gamelan, dan pameran karya kontemporer.
