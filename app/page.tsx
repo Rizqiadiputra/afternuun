@@ -66,11 +66,7 @@ export default function Home() {
               Ruang Kolektif Lintas Generasi untuk Seni, Pengetahuan, Arsip, dan Keberlanjutan.
             </p>
             <p className="text-balance text-lg text-foreground/80 mb-12 leading-relaxed max-w-2xl mx-auto">
-<<<<<<< HEAD
-              Afternuun adalah perkumpulan budaya independen yang lahir dari ikhtiar lintas generasi warga Sanggar Nuun untuk merawat, mengembangkan, dan meneruskan ekosistem seni, pengetahuan, arsip, serta jejaring kebudayaan yang telah tumbuh selama lebih dari tiga dekade.
-=======
               Afternuun adalah perkumpulan budaya independen yang lahir dari ikhtiar lintas generasi warga Sanggar Nuun untuk merawat keberlanjutan seni, pengetahuan, arsip, karya, dan jejaring kebudayaan yang telah tumbuh selama lebih dari tiga dekade.
->>>>>>> agents/add-afternuun-subsections
             </p>
             <div className="flex flex-col gap-4 sm:flex-row justify-center">
               <Link href="/perihal-kami">
