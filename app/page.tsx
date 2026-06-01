@@ -77,6 +77,12 @@ export default function Home() {
                       Pelajari teknik keaktoran, improvisasi, dan pengekspresian diri melalui seni pertunjukan bersama instruktur berpengalaman.
                     </CardDescription>
                   </CardHeader>
+                  <CardContent>
+                    <Button variant="outline" size="sm" className="w-full gap-2">
+                      Lihat Semua Kelas
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </CardContent>
                 </Card>
               </Link>
 
@@ -99,6 +105,12 @@ export default function Home() {
                       Festival seni tiga hari dengan pertunjukan wayang, tari, musik gamelan, dan pameran karya kontemporer.
                     </CardDescription>
                   </CardHeader>
+                  <CardContent>
+                    <Button variant="outline" size="sm" className="w-full gap-2">
+                      Lihat Semua Acara
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </CardContent>
                 </Card>
               </Link>
             </div>

@@ -240,7 +240,7 @@ function RisalahContent() {
               {/* Newsletter Signup */}
               <div className="bg-primary/10 p-8 rounded-lg text-center space-y-6">
                 <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-2">Langgani Newsletter Kami</h2>
+                  <h2 className="text-2xl font-bold text-foreground mb-2">Langganan Newsletter Kami</h2>
                   <p className="text-muted-foreground">
                     Dapatkan artikel terbaru, update jurnal, dan berita dari Afternuun Indonesia langsung ke email Anda.
                   </p>
@@ -254,7 +254,7 @@ function RisalahContent() {
                     required
                   />
                   <Button type="submit" className="gap-2">
-                    Langgani
+                    Langganan
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </form>

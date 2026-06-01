@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Calendar, Clock, Users, ArrowRight, Search } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 const classes = [
@@ -83,6 +84,10 @@ function KhazanahContent() {
     return matchesCategory && matchesSearch
   })
 
+  const getSlug = (title: string) => {
+    return title.toLowerCase().replace(/[&\s]/g, '-').replace(/-+/g, '-')
+  }
+
   return (
     <>
       <Navigation />
@@ -146,56 +151,53 @@ function KhazanahContent() {
                 </p>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {filteredClasses.map((cls) => (
-                    <Card key={cls.id} className="h-full flex flex-col hover:shadow-lg transition-shadow overflow-hidden">
-                      <div className="relative h-48 w-full overflow-hidden">
-                        <Image
-                          src={cls.image}
-                          alt={cls.title}
-                          fill
-                          className="object-cover hover:scale-105 transition-transform"
-                        />
-                      </div>
-                      <CardHeader>
-                        <div className="flex items-start justify-between gap-2 mb-2">
-                          <span className="inline-flex text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">
-                            {cls.category}
-                          </span>
-                          <span className="inline-flex text-xs font-medium bg-muted text-muted-foreground px-2 py-1 rounded-full">
-                            {cls.level}
-                          </span>
+                    <Link key={cls.id} href={`/khazanah/${getSlug(cls.title)}`}>
+                      <Card className="h-full flex flex-col hover:shadow-lg transition-shadow overflow-hidden cursor-pointer group">
+                        <div className="relative h-48 w-full overflow-hidden">
+                          <Image
+                            src={cls.image}
+                            alt={cls.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform"
+                          />
                         </div>
-                        <CardTitle className="text-foreground text-lg line-clamp-2">{cls.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent className="flex-1 space-y-4">
-                        <CardDescription className="text-foreground/70 leading-relaxed">
-                          {cls.description}
-                        </CardDescription>
-
-                        <div className="space-y-2 text-sm text-muted-foreground">
-                          <div className="flex items-center gap-2">
-                            <Calendar className="h-4 w-4" />
-                            <span>{cls.schedule}</span>
+                        <CardHeader>
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <span className="inline-flex text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">
+                              {cls.category}
+                            </span>
+                            <span className="inline-flex text-xs font-medium bg-muted text-muted-foreground px-2 py-1 rounded-full">
+                              {cls.level}
+                            </span>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <Clock className="h-4 w-4" />
-                            <span>{cls.duration}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Users className="h-4 w-4" />
-                            <span>{cls.participants} peserta</span>
-                          </div>
-                        </div>
+                          <CardTitle className="text-foreground text-lg line-clamp-2 group-hover:text-primary transition-colors">{cls.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-1 space-y-4">
+                          <CardDescription className="text-foreground/70 leading-relaxed">
+                            {cls.description}
+                          </CardDescription>
 
-                        <div className="pt-4 border-t border-border">
-                          <p className="text-sm font-medium text-foreground">Mentor: {cls.instructor}</p>
-                        </div>
+                          <div className="space-y-2 text-sm text-muted-foreground">
+                            <div className="flex items-center gap-2">
+                              <Calendar className="h-4 w-4" />
+                              <span>{cls.schedule}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Clock className="h-4 w-4" />
+                              <span>{cls.duration}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Users className="h-4 w-4" />
+                              <span>{cls.participants} peserta</span>
+                            </div>
+                          </div>
 
-                        <Button className="w-full gap-2 mt-4">
-                          Daftar Sekarang
-                          <ArrowRight className="h-4 w-4" />
-                        </Button>
-                      </CardContent>
-                    </Card>
+                          <div className="pt-4 border-t border-border">
+                            <p className="text-sm font-medium text-foreground">Mentor: {cls.instructor}</p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
                   ))}
                 </div>
               </>
@@ -213,11 +215,14 @@ function KhazanahContent() {
             <h2 className="text-3xl font-bold text-foreground mb-6">
               Ingin Menjalankan Kelas Sendiri?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-4">
               Kami membuka kesempatan bagi mentor, instruktur, dan pakar budaya untuk menyelenggarakan kelas dan workshop di Khazanah.
             </p>
+            <p className="text-lg text-muted-foreground mb-8">
+              Atau ingin mendaftarkan kegiatan seni-budaya Anda agar tampil di Khazanah? Kami membuka ruang bagi komunitas dan individu untuk berbagi program bersama ekosistem Afternuun.
+            </p>
             <Button size="lg" className="gap-2">
-              Ajukan Proposal
+              Daftarkan Kegiatan
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>

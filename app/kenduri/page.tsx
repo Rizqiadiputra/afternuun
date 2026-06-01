@@ -188,14 +188,20 @@ function KenduriContent() {
                               <p className="text-sm text-muted-foreground">Harga</p>
                               <p className="text-lg font-semibold text-primary">{event.price}</p>
                             </div>
-                            <Button
-                              className="gap-2"
-                              disabled={isSoldOut}
-                              variant={isSoldOut ? 'secondary' : 'default'}
+                            <a
+                              href="https://loket.com"
+                              target="_blank"
+                              rel="noopener noreferrer"
                             >
-                              {isSoldOut ? 'Penuh' : 'Pesan Tiket'}
-                              {!isSoldOut && <Ticket className="h-4 w-4" />}
-                            </Button>
+                              <Button
+                                className="gap-2"
+                                disabled={isSoldOut}
+                                variant={isSoldOut ? 'secondary' : 'default'}
+                              >
+                                {isSoldOut ? 'Penuh' : 'Pesan Tiket'}
+                                {!isSoldOut && <Ticket className="h-4 w-4" />}
+                              </Button>
+                            </a>
                           </div>
                         </CardContent>
                       </div>

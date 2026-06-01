@@ -182,15 +182,14 @@ export default function Kontak() {
 
                 {/* Social Media */}
                 <div className="pt-6 border-t border-border">
-                  <h3 className="font-semibold text-foreground mb-4">Media Sosial</h3>
                   <div className="space-y-2 text-sm">
                     <p className="text-muted-foreground">
-                      <a href="https://instagram.com/afternuunindonesia" className="text-primary hover:underline">
+                      <a href="https://instagram.com/afternuunindonesia" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                         Instagram: @afternuunindonesia
                       </a>
                     </p>
                     <p className="text-muted-foreground">
-                      <a href="https://www.afternuunindonesia.id" className="text-primary hover:underline">
+                      <a href="https://www.afternuunindonesia.id" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                         Website: www.afternuunindonesia.id
                       </a>
                     </p>

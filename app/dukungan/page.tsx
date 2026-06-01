@@ -71,7 +71,7 @@ const partners = [
   {
     name: 'Universitas Islam Negeri Yogyakarta',
     category: 'Akademik',
-    image: 'https://images.unsplash.com/photo-1519507676751-0da8d8c5c5e2?w=200&h=200&fit=crop'
+    image: 'https://upload.wikimedia.org/wikipedia/id/thumb/5/52/Logo_UIN_Sunan_Kalijaga.svg/200px-Logo_UIN_Sunan_Kalijaga.svg.png'
   },
   {
     name: 'Sanggar Nuun',
