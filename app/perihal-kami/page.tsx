@@ -5,7 +5,7 @@ import { Footer } from '@/components/footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { ArrowRight, BookOpen, Users, Lightbulb, Heart } from 'lucide-react'
+import { ArrowRight, BookOpen, Users, Lightbulb, Heart, User } from 'lucide-react'
 
 const functions = [
   {
@@ -77,20 +77,17 @@ const team = [
   {
     name: 'Zulfan Arif',
     role: 'Ketua',
-    bio: 'Pemimpin gerakan budaya dan seniman dengan pengalaman puluhan tahun dalam pelestarian dan pengembangan seni tradisional Indonesia.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop'
+    bio: 'Pemimpin gerakan budaya dan seniman dengan pengalaman puluhan tahun dalam pelestarian dan pengembangan seni tradisional Indonesia.'
   },
   {
     name: 'Zusdi F. Arianto',
     role: 'Sekretaris',
-    bio: 'Pengelola administratif dan strategis yang memastikan kelancaran operasional dan koordinasi program-program Afternuun Indonesia.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
+    bio: 'Pengelola administratif dan strategis yang memastikan kelancaran operasional dan koordinasi program-program Afternuun Indonesia.'
   },
   {
     name: 'Wahyudin',
     role: 'Bendahara',
-    bio: 'Pengelola keuangan dan sumber daya dengan komitmen pada transparansi dan keberlanjutan finansial gerakan kami.',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop'
+    bio: 'Pengelola keuangan dan sumber daya dengan komitmen pada transparansi dan keberlanjutan finansial gerakan kami.'
   }
 ]
 
