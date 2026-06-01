@@ -113,25 +113,6 @@ function PerihalKamiContent() {
           </div>
         </section>
 
-        {/* Why Afternuun Was Founded */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
-          <div className="mx-auto max-w-6xl">
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">Mengapa Afternuun Didirikan?</h2>
-                <div className="space-y-4">
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Afternuun lahir dari kesadaran bahwa keberlanjutan sebuah ekosistem seni tidak cukup dijaga hanya melalui pergantian generasi yang berlangsung secara alamiah. Diperlukan ruang yang mampu merawat pengetahuan, arsip, jejaring, dan proses pembelajaran yang telah tumbuh selama lebih dari tiga dekade perjalanan Sanggar Nuun.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Perubahan lanskap sosial, budaya, dan kelembagaan menghadirkan tantangan baru bagi keberlanjutan nilai, karya, dan memori kolektif. Karena itu, Afternuun hadir sebagai ruang kolektif untuk mengembangkan pengetahuan, dokumentasi, produksi budaya, dan penguatan ekosistem lintas generasi.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Vision & Mission */}
         <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border">
           <div className="mx-auto max-w-6xl">
@@ -159,24 +140,6 @@ function PerihalKamiContent() {
                   className="object-cover"
                 />
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Afternuun dan Sanggar Nuun */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Afternuun dan Sanggar Nuun</h2>
-            <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Afternuun memiliki keterhubungan historis dengan Sanggar Nuun yang berdiri sejak tahun 1992 di Fakultas Adab dan Ilmu Budaya UIN Sunan Kalijaga Yogyakarta.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Afternuun bukan pengganti Sanggar Nuun, bukan bentuk alih kelembagaan, dan bukan organisasi yang mengambil alih fungsi kaderisasi di kampus.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Afternuun hadir sebagai ruang kolektif lintas generasi yang menopang keberlanjutan arsip, pengetahuan, karya, jejaring, dan kerja-kerja kebudayaan yang tumbuh dari perjalanan panjang Sanggar Nuun.
-              </p>
             </div>
           </div>
         </section>
