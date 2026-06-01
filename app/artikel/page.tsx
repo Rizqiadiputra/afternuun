@@ -39,7 +39,8 @@ const articles = [
     excerpt: 'Strategi dan pembelajaran dari berbagai inisiatif budaya tentang cara membangun model pendanaan yang inklusif dan berkelanjutan.',
     date: '1 Juni 2024',
     category: 'Pendanaan & Keberlanjutan',
-    readTime: '8 min baca'
+    readTime: '8 min baca',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800'
   },
   {
     id: 5,
@@ -47,7 +48,8 @@ const articles = [
     excerpt: 'Mendengarkan cerita dan visi dari para pemimpin komunitas seni yang telah berkontribusi pada ekosistem budaya Indonesia.',
     date: '28 Mei 2024',
     category: 'Wawancara',
-    readTime: '10 min baca'
+    readTime: '10 min baca',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800'
   },
   {
     id: 6,
@@ -55,7 +57,8 @@ const articles = [
     excerpt: 'Refleksi tentang peran penting pendidikan seni dalam mengembangkan kreativitas, empati, dan pemahaman budaya pada anak muda.',
     date: '20 Mei 2024',
     category: 'Program & Pendidikan',
-    readTime: '6 min baca'
+    readTime: '6 min baca',
+    image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800'
   }
 ]
 
