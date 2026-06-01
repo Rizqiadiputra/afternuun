@@ -12,7 +12,7 @@ const navLinks = [
   { href: '/khazanah', label: 'Khazanah' },
   { href: '/kenduri', label: 'Kenduri' },
   { href: '/risalah', label: 'Risalah' },
-  { href: '/ruang-srawung', label: 'Srawung' },
+  { href: '/srawung', label: 'Srawung' },
   { href: '/dukungan', label: 'Dukungan' },
   { href: '/kontak', label: 'Kontak' },
 ]
