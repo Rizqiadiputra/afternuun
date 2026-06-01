@@ -9,7 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Afternuun Indonesia - Ruang Kolektif Seni, Pengetahuan, Arsip',
   description: 'Ruang kolektif lintas generasi untuk seni, pengetahuan, arsip, dan keberlanjutan. Ekosistem tempat belajar, berkarya, berdiskusi, dan berjejaring.',
-  generator: 'v0.app',
+  // generator: 'v0.app',
   icons: {
     icon: [
       {
