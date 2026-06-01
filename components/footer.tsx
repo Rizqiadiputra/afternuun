@@ -19,23 +19,33 @@ export function Footer() {
             <h4 className="font-semibold text-foreground">Menu</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/tentang-kami" className="text-muted-foreground hover:text-primary">
-                  Tentang Kami
+                <Link href="/perihal-kami" className="text-muted-foreground hover:text-primary">
+                  Perihal Kami
                 </Link>
               </li>
               <li>
-                <Link href="/kegiatan" className="text-muted-foreground hover:text-primary">
-                  Kegiatan & Program
+                <Link href="/khazanah" className="text-muted-foreground hover:text-primary">
+                  Khazanah
                 </Link>
               </li>
               <li>
-                <Link href="/galeri" className="text-muted-foreground hover:text-primary">
-                  Galeri
+                <Link href="/kenduri" className="text-muted-foreground hover:text-primary">
+                  Kenduri
                 </Link>
               </li>
               <li>
-                <Link href="/artikel" className="text-muted-foreground hover:text-primary">
-                  Artikel
+                <Link href="/risalah" className="text-muted-foreground hover:text-primary">
+                  Risalah
+                </Link>
+              </li>
+              <li>
+                <Link href="/ruang-srawung" className="text-muted-foreground hover:text-primary">
+                  Ruang Srawung
+                </Link>
+              </li>
+              <li>
+                <Link href="/dukungan" className="text-muted-foreground hover:text-primary">
+                  Dukungan
                 </Link>
               </li>
             </ul>

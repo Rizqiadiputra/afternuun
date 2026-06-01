@@ -42,7 +42,8 @@ const activities = [
     category: 'Residensi',
     date: 'Juli - Agustus 2024',
     description: 'Program residensi untuk seniman internasional yang ingin berkolaborasi dan belajar tentang seni-budaya Indonesia.',
-    program: 'Produksi & Jejaring'
+    program: 'Produksi & Jejaring',
+    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800'
   },
   {
     id: 5,
@@ -50,7 +51,8 @@ const activities = [
     category: 'Workshop',
     date: '1-3 Juli 2024',
     description: 'Workshop intensif tentang cara mengarsipkan dan mendokumentasikan karya seni secara digital dengan standar profesional.',
-    program: 'Arsip & Dokumentasi'
+    program: 'Arsip & Dokumentasi',
+    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800'
   },
   {
     id: 6,
@@ -58,7 +60,8 @@ const activities = [
     category: 'Kunjungan',
     date: '10 Juli 2024',
     description: 'Kesempatan untuk mengunjungi studio seniman lokal dan mempelajari proses kreatif mereka secara langsung.',
-    program: 'Produksi & Jejaring'
+    program: 'Produksi & Jejaring',
+    image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800'
   },
   {
     id: 7,
@@ -66,7 +69,8 @@ const activities = [
     category: 'Festival',
     date: '19-26 Juli 2024',
     description: 'Perayaan seni yang melibatkan seniman muda dan senior, menampilkan pertunjukan, instalasi, dan karya interaktif.',
-    program: 'Produksi & Jejaring'
+    program: 'Produksi & Jejaring',
+    image: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=800'
   },
   {
     id: 8,
@@ -74,7 +78,8 @@ const activities = [
     category: 'Seminar',
     date: '5 Agustus 2024',
     description: 'Dialog tentang strategi pendanaan dan keberlanjutan untuk organisasi dan inisiatif budaya independen.',
-    program: 'Pendanaan & Keberlanjutan'
+    program: 'Pendanaan & Keberlanjutan',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800'
   }
 ]
 
