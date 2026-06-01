@@ -40,6 +40,14 @@ const functions = [
   }
 ]
 
+const whyEstablished = {
+  paragraphs: [
+    'Afternuun lahir dari kesadaran bahwa keberlanjutan sebuah ekosistem seni tidak cukup dijaga hanya melalui pergantian generasi yang berlangsung secara alamiah.',
+    'Selama lebih dari tiga dekade, Sanggar Nuun telah menjadi ruang pembelajaran artistik, laboratorium kreativitas, rumah pergaulan estetik, sekaligus ruang tumbuh bagi banyak generasi. Namun perubahan lanskap sosial, budaya, dan kelembagaan menghadirkan tantangan baru bagi keberlanjutan nilai, karya, arsip, pengetahuan, dan memori kolektif yang telah dibangun bersama.',
+    'Karena itu, Afternuun hadir sebagai ruang kolektif untuk mengembangkan pengetahuan, dokumentasi, produksi budaya, pengarsipan, serta penguatan ekosistem lintas generasi yang mampu hidup dan berkembang melampaui batas-batas struktural kampus.'
+  ]
+}
+
 const principles = [
   {
     number: '01',
@@ -110,6 +118,20 @@ function PerihalKamiContent() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Ruang kolektif lintas generasi untuk merawat ingatan, membangun pengetahuan, menciptakan masa depan, dan menjaga keberlanjutan budaya Indonesia.
             </p>
+          </div>
+        </section>
+
+        {/* Why Established Section */}
+        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-foreground mb-8">Mengapa Afternuun Didirikan?</h2>
+            <div className="space-y-6">
+              {whyEstablished.paragraphs.map((paragraph, idx) => (
+                <p key={idx} className="text-lg text-muted-foreground leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </section>
 
