@@ -63,10 +63,10 @@ export default function Home() {
               Afternuun <span className="text-primary">Indonesia</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Ruang kolektif lintas generasi untuk seni, pengetahuan, arsip, dan keberlanjutan.
+              Ruang Kolektif Lintas Generasi untuk Seni, Pengetahuan, Arsip, dan Keberlanjutan.
             </p>
             <p className="text-balance text-lg text-foreground/80 mb-12 leading-relaxed max-w-2xl mx-auto">
-              Afternuun Indonesia hadir sebagai rumah bersama bagi seniman, pelajar, peneliti, budayawan, alumni, dan komunitas yang ingin menjaga ingatan, membangun pengetahuan, serta menciptakan masa depan kebudayaan Indonesia.
+              Afternuun adalah perkumpulan budaya independen yang lahir dari ikhtiar lintas generasi warga Sanggar Nuun untuk merawat keberlanjutan seni, pengetahuan, arsip, karya, dan jejaring kebudayaan yang telah tumbuh selama lebih dari tiga dekade.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row justify-center">
               <Link href="/perihal-kami">
