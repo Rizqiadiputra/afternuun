@@ -45,7 +45,45 @@ export default function Home() {
       <Navigation />
       
       <main className="flex flex-col">
-        {/* Agenda Section - Moved before Programs */}
+        {/* Hero Section */}
+        <section className="relative min-h-screen bg-black px-4 py-20 sm:px-6 lg:px-8 flex items-center">
+          <div className="absolute inset-0 z-0">
+            <NextImage
+              src="https://images.unsplash.com/photo-1604537466608-109fa2f16c3b?w=1600"
+              alt="Hero Banner"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/50"></div>
+          </div>
+          <div className="relative z-10 mx-auto max-w-4xl text-center w-full">
+            <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl mb-6">
+              Afternuun <span className="text-primary">Indonesia</span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              Ruang kolektif lintas generasi untuk seni, pengetahuan, arsip, dan keberlanjutan.
+            </p>
+            <p className="text-balance text-lg text-foreground/80 mb-12 leading-relaxed max-w-2xl mx-auto">
+              Afternuun Indonesia hadir sebagai rumah bersama bagi seniman, pelajar, peneliti, budayawan, alumni, dan komunitas yang ingin menjaga ingatan, membangun pengetahuan, serta menciptakan masa depan kebudayaan Indonesia.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row justify-center">
+              <Link href="/perihal-kami">
+                <Button size="lg" className="gap-2">
+                  Pelajari Lebih Lanjut
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/dukungan">
+                <Button size="lg" variant="outline">
+                  Dukung Kami
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Agenda Section */}
         <section className="px-4 py-20 sm:px-6 lg:px-8 bg-muted/20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-16 text-center">
@@ -112,44 +150,6 @@ export default function Home() {
                     </Button>
                   </CardContent>
                 </Card>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Hero Section */}
-        <section className="relative min-h-screen bg-black px-4 py-20 sm:px-6 lg:px-8 flex items-center">
-          <div className="absolute inset-0 z-0">
-            <NextImage
-              src="https://images.unsplash.com/photo-1604537466608-109fa2f16c3b?w=1600"
-              alt="Hero Banner"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/50"></div>
-          </div>
-          <div className="relative z-10 mx-auto max-w-4xl text-center w-full">
-            <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl mb-6">
-              Afternuun <span className="text-primary">Indonesia</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Ruang kolektif lintas generasi untuk seni, pengetahuan, arsip, dan keberlanjutan.
-            </p>
-            <p className="text-balance text-lg text-foreground/80 mb-12 leading-relaxed max-w-2xl mx-auto">
-              Afternuun Indonesia hadir sebagai rumah bersama bagi seniman, pelajar, peneliti, budayawan, alumni, dan komunitas yang ingin menjaga ingatan, membangun pengetahuan, serta menciptakan masa depan kebudayaan Indonesia.
-            </p>
-            <div className="flex flex-col gap-4 sm:flex-row justify-center">
-              <Link href="/perihal-kami">
-                <Button size="lg" className="gap-2">
-                  Pelajari Lebih Lanjut
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/dukungan">
-                <Button size="lg" variant="outline">
-                  Dukung Kami
-                </Button>
               </Link>
             </div>
           </div>
