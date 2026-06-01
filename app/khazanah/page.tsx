@@ -3,74 +3,19 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Calendar, Clock, Users, ArrowRight, Search } from 'lucide-react'
+import { Calendar, Clock, Users, ArrowRight, Search, Archive } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { khazanahClasses, archiveItems } from '@/data/khazanah-classes'
 
-const classes = [
-  {
-    id: 1,
-    title: 'Workshop Penulisan Kreatif & Sastra',
-    description: 'Belajar teknik penulisan kreatif, storytelling, dan pengembangan gaya menulis sendiri untuk berbagai genre sastra kontemporer.',
-    category: 'Sastra',
-    instructor: 'Penulis & Sastrawan',
-    schedule: 'Setiap Senin & Rabu, 19:00 - 20:30',
-    duration: '8 Minggu',
-    level: 'Semua Level',
-    participants: 16,
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800'
-  },
-  {
-    id: 2,
-    title: 'Kelas Musik Tradisi & Kontemporer',
-    description: 'Mendalami musik tradisional Indonesia dan eksplorasi fusion dengan musik kontemporer melalui instrumen dan komposisi.',
-    category: 'Musik',
-    instructor: 'Musisi Profesional',
-    schedule: 'Setiap Selasa & Kamis, 18:00 - 19:30',
-    duration: '10 Minggu',
-    level: 'Pemula',
-    participants: 14,
-    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800'
-  },
-  {
-    id: 3,
-    title: 'Studio Seni Rupa & Instalasi',
-    description: 'Eksplorasi berbagai medium seni rupa dari lukisan, patung, hingga instalasi seni interaktif dan kontemporer.',
-    category: 'Seni Rupa',
-    instructor: 'Seniman Rupa',
-    schedule: 'Setiap Sabtu, 10:00 - 12:30',
-    duration: '12 Minggu',
-    level: 'Menengah',
-    participants: 18,
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800'
-  },
-  {
-    id: 4,
-    title: 'Workshop Keaktoran & Teater',
-    description: 'Pelajari teknik keaktoran, improvisasi, dan pengekspresian diri melalui seni teater dan pertunjukan langsung.',
-    category: 'Teater',
-    instructor: 'Aktor & Sutradara',
-    schedule: 'Setiap Rabu & Jumat, 17:00 - 18:30',
-    duration: '10 Minggu',
-    level: 'Semua Level',
-    participants: 20,
-    image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?w=800'
-  },
-  {
-    id: 5,
-    title: 'Kelas Dokumentasi & Media Seni',
-    description: 'Belajar teknik dokumentasi visual, fotografi, videografi, dan produksi media untuk melestarikan dan mempromosikan karya seni.',
-    category: 'Media',
-    instructor: 'Sinematografer & Fotografer',
-    schedule: 'Setiap Minggu, 19:00 - 21:00',
-    duration: '8 Minggu',
-    level: 'Pemula',
-    participants: 12,
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800'
-  }
-]
-
+const aboutKhazanah = {
+  paragraphs: [
+    'Khazanah adalah ruang pengetahuan Afternuun yang menghimpun pengalaman, praktik artistik, dokumentasi, arsip, dan pembelajaran budaya lintas generasi.',
+    'Kami percaya bahwa seni dan kebudayaan tidak hanya diwariskan melalui karya, tetapi juga melalui pengetahuan, pengalaman, percakapan, dan memori yang terus hidup. Karena itu, Khazanah hadir sebagai ruang belajar bersama untuk merawat sekaligus mengembangkan warisan pengetahuan budaya bagi generasi yang akan datang.',
+  ]
+}
+const classes = khazanahClasses
 const categories = ['Semua', ...new Set(classes.map(c => c.category))]
 
 function KhazanahContent() {
@@ -94,20 +39,79 @@ function KhazanahContent() {
       
       <main className="flex flex-col">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
+        <section className="relative min-h-96 bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8 flex items-center">
+          <div className="mx-auto max-w-4xl text-center w-full">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-6 sm:text-5xl">
               Khazanah
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Kelas, Workshop, dan Ruang Belajar Seni-Budaya
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+             Merawat Pengetahuan, Menghidupkan Pembelajaran
             </p>
+          </div>
+        </section>
+
+        {/* About Khazanah Section */}
+        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-foreground mb-8">Tentang Khazanah</h2>
+            <div className="space-y-6">
+              {aboutKhazanah.paragraphs.map((paragraph, idx) => (
+                <p key={idx} className="text-lg text-muted-foreground leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Archive & Documentation Section */}
+        <section className="px-4 py-20 sm:px-6 lg:px-8 bg-background border-t border-border">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
+              Arsip & Dokumentasi
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-16">
+              Selain menghadirkan ruang belajar, Khazanah juga menjadi wadah pengembangan arsip dan dokumentasi budaya yang bertujuan menjaga pengetahuan, pengalaman, dan memori kolektif agar dapat diwariskan kepada generasi berikutnya.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {archiveItems.map((item) => (
+                <Card key={item.id} className="flex flex-col">
+                  <CardHeader>
+                    <div className="flex justify-center mb-4">
+                      <Archive className="h-8 w-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-center text-foreground">
+                      {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <p className="text-center text-muted-foreground">
+                      {item.description}
+                    </p>
+                    <div className="mt-6 text-center">
+                      <span className="inline-flex px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full">
+                        Segera Hadir
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <h3 h3 className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mt-12 pt-12 border-t border-b border-border pb-12">
+              Selain merawat arsip dan pengetahuan, Khazanah juga menghidupkan tradisi belajar bersama melalui berbagai kelas, lokakarya, dan forum pembelajaran yang terbuka bagi publik.
+            </h3>
           </div>
         </section>
 
         {/* Search and Filter */}
         <section className="px-4 py-8 sm:px-6 lg:px-8 border-b border-border">
           <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
+              Afternuun School: Kelas & Workshop
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-16">
+              Ruang Belajar dan Berbagi Pengetahuan Seni-Budaya Lintas Generasi.
+            </p>
             {/* Search */}
             <div className="mb-8">
               <div className="relative">
@@ -213,16 +217,16 @@ function KhazanahContent() {
         <section className="bg-primary/10 px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-foreground mb-6">
-              Ingin Menjalankan Kelas Sendiri?
+              Menjadi Bagian dari Khazanah
             </h2>
             <p className="text-lg text-muted-foreground mb-4">
-              Kami membuka kesempatan bagi mentor, instruktur, dan pakar budaya untuk menyelenggarakan kelas dan workshop di Khazanah.
+              Khazanah tumbuh melalui kontribusi banyak pihak. Anda dapat berpartisipasi sebagai mentor, fasilitator, peneliti, dokumentator, maupun penggerak program pembelajaran dan pengarsipan budaya.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
-              Atau ingin mendaftarkan kegiatan seni-budaya Anda agar tampil di Khazanah? Kami membuka ruang bagi komunitas dan individu untuk berbagi program bersama ekosistem Afternuun.
+              Mari berbagi pengetahuan, pengalaman, dan praktik kebudayaan bersama ekosistem Afternuun.
             </p>
             <Button size="lg" className="gap-2">
-              Daftarkan Kegiatan
+              Bergabung dengan Khazanah
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
