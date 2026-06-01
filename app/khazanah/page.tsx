@@ -97,7 +97,7 @@ function KhazanahContent() {
                 </Card>
               ))}
             </div>
-            <h3 h3 className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mt-12 pt-12 border-t border-b border-border pb-12">
+            <h3 className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mt-12 pt-12 border-t border-b border-border pb-12">
               Selain merawat arsip dan pengetahuan, Khazanah juga menghidupkan tradisi belajar bersama melalui berbagai kelas, lokakarya, dan forum pembelajaran yang terbuka bagi publik.
             </h3>
           </div>

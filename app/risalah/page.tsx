@@ -127,6 +127,13 @@ const researchPapers = [
   }
 ]
 
+const aboutRisalah = {
+  paragraphs: [
+    'Risalah adalah ruang publikasi Afternuun yang menghimpun artikel, penelitian, wawancara, refleksi, dan berbagai bentuk dokumentasi pengetahuan yang lahir dari praktik seni, budaya, dan pembelajaran lintas generasi.',
+    'Melalui Risalah, gagasan tidak berhenti dalam percakapan, tetapi didokumentasikan, dibagikan, dan dikembangkan sebagai sumber pembelajaran bagi publik.',
+    'Risalah menjadi salah satu cara Afternuun merawat dan menyebarluaskan pengetahuan yang lahir dari proses belajar, praktik budaya, penelitian, dan pengalaman lintas generasi.']
+}
+
 
 function RisalahContent() {
   const [activeTab, setActiveTab] = useState('articles')
@@ -141,14 +148,28 @@ function RisalahContent() {
       
       <main className="flex flex-col">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
+       <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground mb-6 sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4 sm:text-5xl">
               Risalah
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Artikel, jurnal penelitian, wawancara, dan refleksi tentang seni, budaya, dan keberlanjutan
+            <p className="text-xl text-muted-foreground mb-6">
+              Ruang Publikasi Pengetahuan, Refleksi, dan Dokumentasi Gagasan
             </p>
+          </div>
+        </section>
+
+        {/* About Risalah Section */}
+        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-foreground mb-8">Tentang Risalah</h2>
+            <div className="space-y-6">
+              {aboutRisalah.paragraphs.map((paragraph, idx) => (
+                <p key={idx} className="text-lg text-muted-foreground leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -165,7 +186,7 @@ function RisalahContent() {
                 }`}
               >
                 <BookOpen className="h-4 w-4 inline mr-2" />
-                Artikel & Blog
+                Publikasi Populer
               </button>
               <button
                 onClick={() => setActiveTab('research')}
@@ -176,7 +197,7 @@ function RisalahContent() {
                 }`}
               >
                 <FileText className="h-4 w-4 inline mr-2" />
-                Jurnal & Penelitian
+                Kajian & Penelitian
               </button>
             </div>
           </div>
@@ -248,7 +269,7 @@ function RisalahContent() {
                 <div>
                   <h2 className="text-2xl font-bold text-foreground mb-2">Langganan Newsletter Kami</h2>
                   <p className="text-muted-foreground">
-                    Dapatkan artikel terbaru, update jurnal, dan berita dari Afternuun Indonesia langsung ke email Anda.
+                    Dapatkan artikel, refleksi, publikasi penelitian, dokumentasi pengetahuan, dan kabar terbaru dari ekosistem Afternuun langsung ke email Anda. Ikuti perkembangan gagasan, praktik budaya, dan pembelajaran lintas generasi yang tumbuh bersama Afternuun.
                   </p>
                 </div>
 
@@ -349,7 +370,7 @@ function RisalahContent() {
                 <div>
                   <h2 className="text-2xl font-bold text-foreground mb-2">Kirimkan Penelitian Anda</h2>
                   <p className="text-muted-foreground">
-                    Kami menerima kontribusi penelitian, artikel akademik, dan jurnal tentang budaya, seni, dan keberlanjutan. Hubungi kami untuk panduan kontribusi.
+                    Dapatkan artikel, refleksi, publikasi penelitian, dokumentasi pengetahuan, dan kabar terbaru dari ekosistem Afternuun langsung ke email Anda.
                   </p>
                 </div>
 
