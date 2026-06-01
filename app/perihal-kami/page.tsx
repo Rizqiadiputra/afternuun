@@ -77,17 +77,20 @@ const team = [
   {
     name: 'Zulfan Arif',
     role: 'Ketua',
-    bio: 'Pemimpin gerakan budaya dan seniman dengan pengalaman puluhan tahun dalam pelestarian dan pengembangan seni tradisional Indonesia.'
+    bio: 'Pemimpin gerakan budaya dan seniman dengan pengalaman puluhan tahun dalam pelestarian dan pengembangan seni tradisional Indonesia.',
+    image: 'https://res.cloudinary.com/rizqiadiputra/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1780322333/zulfan_bgg4tp.jpg'
   },
   {
     name: 'Zusdi F. Arianto',
     role: 'Sekretaris',
-    bio: 'Pengelola administratif dan strategis yang memastikan kelancaran operasional dan koordinasi program-program Afternuun Indonesia.'
+    bio: 'Pengelola administratif dan strategis yang memastikan kelancaran operasional dan koordinasi program-program Afternuun Indonesia.',
+    image: 'https://res.cloudinary.com/rizqiadiputra/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1780322333/rian_m8wx5k.jpg'
   },
   {
     name: 'Wahyudin',
     role: 'Bendahara',
-    bio: 'Pengelola keuangan dan sumber daya dengan komitmen pada transparansi dan keberlanjutan finansial gerakan kami.'
+    bio: 'Pengelola keuangan dan sumber daya dengan komitmen pada transparansi dan keberlanjutan finansial gerakan kami.',
+    image: 'https://res.cloudinary.com/rizqiadiputra/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1780322333/after_qjihii.jpg'
   }
 ]
 
