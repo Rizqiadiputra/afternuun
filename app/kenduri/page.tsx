@@ -59,12 +59,12 @@ const events = [
 const eventTypes = ['Semua', ...new Set(events.map(e => e.type))]
 
 const galleryPhotos = [
-  'https://images.unsplash.com/photo-1460461603893-e9f3b8db7b14?w=600',
-  'https://images.unsplash.com/photo-1504680177321-2e6a879aac86?w=600',
-  'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=600',
-  'https://images.unsplash.com/photo-1474932430478-367dbb6832c1?w=600',
-  'https://images.unsplash.com/photo-1470019693664-1d202d2c0401?w=600',
-  'https://images.unsplash.com/photo-1503095396549-807759245b35?w=600',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323550/DSC_0225_zuq29k.jpg',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323563/2012-05-13_13.37.39_quiapv.jpg ',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323584/100_8657_ft6zdb.jpg',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323616/375796_2346906405893_1647036719_2272604_249076703_n_dbdhva.jpg',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323631/DSC_0973_mmomf0.jpg',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780324127/2012-05-13_14.44.27_zzsem1.jpg',
 ]
 
 const galleryVideos = [
