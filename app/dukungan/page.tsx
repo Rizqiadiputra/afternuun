@@ -114,18 +114,18 @@ const donationMethods = [
     title: 'E-Wallet',
     description: 'Donasi melalui berbagai platform pembayaran digital',
     details: [
-      { label: 'GCash', value: '+62 812 3456 7890' },
-      { label: 'DANA', value: '+62 812 3456 7890' },
-      { label: 'OVO', value: '+62 812 3456 7890' },
+      { label: 'GoPay', value: '+62 896 5350 9715' },
+      { label: 'DANA', value: '+62 896 5350 9715' },
+      { label: 'OVO', value: '+62 896 5350 9715' },
     ]
   },
   {
-    title: 'Transfer Internasional',
-    description: 'Dukungan dari donatur di luar Indonesia',
+    title: 'Crowdfunding',
+    description: 'Dukungan donasi melalui platform BenihBaik',
     details: [
-      { label: 'Swift Code', value: 'BCAIIDJA' },
-      { label: 'IBAN', value: 'ID12BCAA1234567890' },
-      { label: 'Atas Nama', value: 'Afternuun Indonesia Foundation' },
+      { label: 'Platform', value: 'BenihBaik' },
+      { label: 'Campaign', value: 'Afternuun Indonesia Foundation' },
+      { label: 'Link Donasi', value: 'https://benihbaik.com/campaign/afternuun-indonesia-foundation' },
     ]
   }
 ]

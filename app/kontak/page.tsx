@@ -181,7 +181,7 @@ export default function Kontak() {
                 })}
 
                 {/* Social Media */}
-                <div className="pt-6 border-t border-border">
+                {/* <div className="pt-6 border-t border-border">
                   <div className="space-y-2 text-sm">
                     <p className="text-muted-foreground">
                       <a href="https://instagram.com/afternuunindonesia" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
@@ -194,7 +194,7 @@ export default function Kontak() {
                       </a>
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Contact Form */}
