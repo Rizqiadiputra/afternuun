@@ -8,6 +8,13 @@ import { Calendar, MapPin, Ticket, Users, ArrowRight, Filter, ChevronLeft, Chevr
 import Image from 'next/image'
 import { useState } from 'react'
 
+const aboutKenduri = {
+  paragraphs: [
+    'Kenduri adalah ruang perjumpaan Afternuun yang menghadirkan berbagai bentuk produksi, presentasi, dan perayaan karya seni-budaya.',
+    'Melalui festival, pertunjukan, pameran, pemutaran film, diskusi, dan berbagai kegiatan lainnya, Kenduri menjadi tempat bertemunya seniman, komunitas, akademisi, dan masyarakat dalam pengalaman budaya yang hidup dan terbuka.'
+  ]
+}
+
 const events = [
   {
     id: 1,
@@ -124,8 +131,22 @@ function KenduriContent() {
               Kenduri
             </h1>
             <p className="text-xl text-muted-foreground">
-              Acara, Pameran, dan Perayaan Karya
+              Ruang Perjumpaan, Produksi, dan Perayaan Budaya
             </p>
+          </div>
+        </section>
+
+        {/* About Kenduri Section */}
+        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-foreground mb-8">Tentang Kenduri</h2>
+            <div className="space-y-6">
+              {aboutKenduri.paragraphs.map((paragraph, idx) => (
+                <p key={idx} className="text-lg text-muted-foreground leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -153,6 +174,12 @@ function KenduriContent() {
         {/* Events List */}
         <section className="px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
+              Agenda & Peristiwa Budaya
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-16">
+              Kenduri menghadirkan berbagai peristiwa budaya yang menjadi ruang perjumpaan, presentasi karya, pertukaran gagasan, dan pengalaman bersama. Melalui festival, pertunjukan, pameran, pemutaran film, serta forum budaya lainnya, Kenduri menghubungkan karya dengan publik dalam suasana yang hidup dan terbuka.
+            </p>
             {filteredEvents.length > 0 ? (
               <>
                 <div className="space-y-6 mb-8">
@@ -255,9 +282,11 @@ function KenduriContent() {
         <section className="px-4 py-20 sm:px-6 lg:px-8 bg-muted/20">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              Gallery
+              Dokumentasi Kenduri
             </h2>
-            
+            <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-16">
+              Dokumentasi berbagai perjumpaan, pertunjukan, pameran, diskusi, dan peristiwa budaya yang menjadi bagian dari perjalanan Kenduri.
+            </p>
             {/* Tabs */}
             <div className="flex justify-center gap-4 mb-12">
               <button

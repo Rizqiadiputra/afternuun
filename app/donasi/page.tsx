@@ -1,8 +1,11 @@
+'use client'
+
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Heart, Banknote, TrendingUp } from 'lucide-react'
+import { Heart, Banknote, TrendingUp, Check, Copy } from 'lucide-react'
+import { useState } from 'react'
 
 const donationMethods = [
   {
@@ -58,10 +61,19 @@ export const metadata = {
 }
 
 export default function Donasi() {
+  const [copiedMethod, setCopiedMethod] = useState<string | null>(null)
+
+  const handleCopy = (methodTitle: string, details: Array<{ label: string; value: string }>) => {
+    const text = details.map(d => `${d.label}: ${d.value}`).join('\n')
+    navigator.clipboard.writeText(text)
+    setCopiedMethod(methodTitle)
+    setTimeout(() => setCopiedMethod(null), 2000)
+  }
+
   return (
     <>
       <Navigation />
-      
+
       <main className="flex flex-col">
         {/* Hero Section */}
         <section className="bg-primary/10 px-4 py-16 sm:px-6 lg:px-8">
@@ -116,7 +128,7 @@ export default function Donasi() {
                 </p>
               </div>
 
-              <div className="grid gap-8 md:grid-cols-3">
+              <div className="grid gap-8">
                 {donationMethods.map((method) => (
                   <Card key={method.title} className="border-primary/20 hover:shadow-lg transition-shadow">
                     <CardHeader>
@@ -124,7 +136,7 @@ export default function Donasi() {
                       <CardDescription>{method.description}</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <div className="space-y-3 bg-muted/30 p-4 rounded">
+                      <div className="grid gap-4 md:grid-cols-3 bg-muted/30 p-4 rounded">
                         {method.details.map((detail) => (
                           <div key={detail.label} className="space-y-1">
                             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
@@ -136,8 +148,22 @@ export default function Donasi() {
                           </div>
                         ))}
                       </div>
-                      <Button className="w-full" variant="outline">
-                        Salin Detail
+                      <Button
+                        className="w-full gap-2"
+                        variant={copiedMethod === method.title ? "default" : "outline"}
+                        onClick={() => handleCopy(method.title, method.details)}
+                      >
+                        {copiedMethod === method.title ? (
+                          <>
+                            <Check className="h-4 w-4" />
+                            Tersalin!
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="h-4 w-4" />
+                            Salin Detail
+                          </>
+                        )}
                       </Button>
                     </CardContent>
                   </Card>
@@ -148,7 +174,7 @@ export default function Donasi() {
             {/* Additional Info */}
             <div className="space-y-8 bg-primary/5 p-8 rounded-lg">
               <h2 className="text-2xl font-bold text-foreground">Informasi Tambahan</h2>
-              
+
               <div className="space-y-6">
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Status Organisasi</h3>

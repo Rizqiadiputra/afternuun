@@ -4,7 +4,7 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Heart, Banknote, TrendingUp, Handshake, ArrowRight, Check } from 'lucide-react'
+import { Heart, Banknote, TrendingUp, Handshake, ArrowRight, Check, Copy } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -100,39 +100,56 @@ const partners = [
   }
 ]
 
-const donationMethods = [
-  {
-    title: 'Transfer Bank',
-    description: 'Donasi langsung melalui transfer ke rekening resmi kami',
-    details: [
-      { label: 'Bank', value: 'BCA' },
-      { label: 'Nomor Rekening', value: '1234567890' },
-      { label: 'Atas Nama', value: 'Yayasan Afternuun Indonesia' },
-    ]
-  },
-  {
-    title: 'E-Wallet',
-    description: 'Donasi melalui berbagai platform pembayaran digital',
-    details: [
-      { label: 'GoPay', value: '+62 896 5350 9715' },
-      { label: 'DANA', value: '+62 896 5350 9715' },
-      { label: 'OVO', value: '+62 896 5350 9715' },
-    ]
-  },
-  {
-    title: 'Crowdfunding',
-    description: 'Dukungan donasi melalui platform BenihBaik',
-    details: [
-      { label: 'Platform', value: 'BenihBaik' },
-      { label: 'Campaign', value: 'Afternuun Indonesia Foundation' },
-      { label: 'Link Donasi', value: 'https://benihbaik.com/campaign/afternuun-indonesia-foundation' },
-    ]
-  }
+  const donationMethods = [
+    {
+      title: 'Srawung dengan Admin',
+      description: 'Ingin mendukung Afternuun? Hubungi kami terlebih dahulu agar kami dapat membantu menyesuaikan bentuk dukungan yang paling tepat.',
+      details: [
+        { label: 'WhatsApp', value: '+62 896-5350-9715' },
+        { label: 'Email', value: 'hello@afternuun.id' },
+        { label: 'Dukungan', value: 'Donasi, sponsorship, kolaborasi program, atau kontribusi lainnya.' },
+      ]
+    },
+  // {
+  //   title: 'Transfer Bank',
+  //   description: 'Donasi langsung melalui transfer ke rekening resmi kami',
+  //   details: [
+  //     { label: 'Bank', value: 'BCA' },
+  //     { label: 'Nomor Rekening', value: '1234567890' },
+  //     { label: 'Atas Nama', value: 'Yayasan Afternuun Indonesia' },
+  //   ]
+  // },
+  // {
+  //   title: 'E-Wallet',
+  //   description: 'Donasi melalui berbagai platform pembayaran digital',
+  //   details: [
+  //     { label: 'GoPay', value: '+62 896 5350 9715' },
+  //     { label: 'DANA', value: '+62 896 5350 9715' },
+  //     { label: 'OVO', value: '+62 896 5350 9715' },
+  //   ]
+  // },
+  // {
+  //   title: 'Crowdfunding',
+  //   description: 'Dukungan donasi melalui platform BenihBaik',
+  //   details: [
+  //     { label: 'Platform', value: 'BenihBaik' },
+  //     { label: 'Campaign', value: 'Afternuun Indonesia Foundation' },
+  //     { label: 'Link Donasi', value: 'https://benihbaik.com/campaign/afternuun-indonesia-foundation' },
+  //   ]
+  // }
 ]
 
 
 function DukunganContent() {
   const [activeTab, setActiveTab] = useState('donation')
+  const [copiedMethod, setCopiedMethod] = useState<string | null>(null)
+
+  const handleCopy = (methodTitle: string, details: Array<{ label: string; value: string }>) => {
+    const text = details.map(d => `${d.label}: ${d.value}`).join('\n')
+    navigator.clipboard.writeText(text)
+    setCopiedMethod(methodTitle)
+    setTimeout(() => setCopiedMethod(null), 2000)
+  }
 
   return (
     <>
@@ -266,7 +283,7 @@ function DukunganContent() {
                   </p>
                 </div>
 
-                <div className="grid gap-8 md:grid-cols-3">
+                <div className="grid gap-8">
                   {donationMethods.map((method) => (
                     <Card key={method.title} className="border-primary/20 hover:shadow-lg transition-shadow">
                       <CardHeader>
@@ -274,7 +291,7 @@ function DukunganContent() {
                         <CardDescription>{method.description}</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-4">
-                        <div className="space-y-3 bg-muted/30 p-4 rounded">
+                        <div className="grid gap-4 md:grid-cols-3 bg-muted/30 p-4 rounded">
                           {method.details.map((detail) => (
                             <div key={detail.label} className="space-y-1">
                               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
@@ -286,8 +303,22 @@ function DukunganContent() {
                             </div>
                           ))}
                         </div>
-                        <Button className="w-full" variant="outline">
-                          Salin Detail
+                        <Button
+                          className="w-full gap-2"
+                          variant={copiedMethod === method.title ? "default" : "outline"}
+                          onClick={() => handleCopy(method.title, method.details)}
+                        >
+                          {copiedMethod === method.title ? (
+                            <>
+                              <Check className="h-4 w-4" />
+                              Tersalin!
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="h-4 w-4" />
+                              Salin Detail
+                            </>
+                          )}
                         </Button>
                       </CardContent>
                     </Card>
