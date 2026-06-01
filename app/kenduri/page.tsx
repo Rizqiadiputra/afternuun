@@ -11,81 +11,68 @@ import { useState } from 'react'
 const events = [
   {
     id: 1,
-    title: 'Festival Seni Jawa: Lintas Generasi',
-    description: 'Festival seni tiga hari menampilkan pertunjukan wayang, tari, musik gamelan, dan pameran karya seni kontemporer dari seniman lokal.',
-    type: 'Festival',
-    date: '15-17 Agustus 2024',
-    time: '18:00 - 22:00',
-    location: 'Pendopo Agung, Yogyakarta',
-    price: 'Gratis - Rp 500.000',
-    capacity: 500,
-    registered: 342,
-    image: 'https://images.unsplash.com/photo-1514306688772-87c333ba84e1?w=800'
+    title: 'Malam Baca Puisi & Peluncuran Buku',
+    description: 'Acara sastra dengan pembacaan puisi dari penulis lokal dan peluncuran buku-buku baru yang menggali tema-tema budaya dan sejarah.',
+    type: 'Sastra',
+    date: '15 Juli 2026',
+    time: '19:00 - 21:00',
+    location: 'Yogyakarta',
+    price: 'Gratis',
+    capacity: 150,
+    registered: 98,
+    image: 'https://images.unsplash.com/photo-1474932430478-367dbb6832c1?w=800'
   },
   {
     id: 2,
-    title: 'Pameran "Ingatan Warna": Koleksi Batik Kontemporer',
-    description: 'Pameran kolaborasi seniman batik tradisional dan desainer kontemporer, menghadirkan perspektif baru tentang warisan budaya visual.',
-    type: 'Pameran',
-    date: '1-30 September 2024',
-    time: '10:00 - 18:00',
-    location: 'Ruang Pameran Afternuun, Jakarta',
-    price: 'Rp 50.000 (Tiket Masuk)',
-    capacity: 'Unlimited',
-    registered: 1230,
-    image: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=800'
+    title: 'Konser Musik Tradisi Nusantara',
+    description: 'Pertunjukan musik yang menampilkan instrumen tradisional dari berbagai wilayah Indonesia, dari Aceh hingga Papua.',
+    type: 'Musik',
+    date: '22 Juli 2026',
+    time: '18:00 - 21:00',
+    location: 'Yogyakarta',
+    price: 'Rp 75.000',
+    capacity: 300,
+    registered: 245,
+    image: 'https://images.unsplash.com/photo-1470019693664-1d202d2c0401?w=800'
   },
   {
     id: 3,
-    title: 'Lokakarya Kolaboratif: Musik Tradisional x Digital',
-    description: 'Tiga hari workshop intensif mengeksplorasi kolaborasi antara instrumen gamelan tradisional dengan teknologi produksi musik digital.',
-    type: 'Workshop',
-    date: '20-22 September 2024',
-    time: '09:00 - 17:00',
-    location: 'Studio Musik Afternuun, Bandung',
-    price: 'Rp 750.000 (Early Bird)',
-    capacity: 50,
-    registered: 38,
-    image: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=800'
+    title: 'Pameran Seni Rupa Lintas Generasi',
+    description: 'Pameran yang menampilkan karya seniman dari berbagai generasi, memperlihatkan dialog antara tradisional dan kontemporer dalam seni rupa.',
+    type: 'Seni Rupa',
+    date: '1 Agustus 2026',
+    time: '10:00 - 18:00',
+    location: 'Yogyakarta',
+    price: 'Gratis',
+    capacity: 'Unlimited',
+    registered: 567,
+    image: 'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800'
   },
   {
     id: 4,
-    title: 'Diskusi Publik: Masa Depan Warisan Budaya',
-    description: 'Panel diskusi dengan pakar, seniman, budayawan, dan pemimpin komunitas tentang strategi melestarikan dan mengembangkan warisan budaya.',
-    type: 'Diskusi',
-    date: '5 Oktober 2024',
-    time: '15:00 - 18:00',
-    location: 'Auditorium Universitas, Surabaya',
-    price: 'Gratis (Daftar di Tempat)',
-    capacity: 300,
-    registered: 156,
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800'
+    title: 'Festival Teater Kampus & Komunitas',
+    description: 'Festival teater yang menghadirkan pertunjukan dari grup teater kampus dan komunitas independen, menampilkan kreativitas generasi muda.',
+    type: 'Teater',
+    date: '10 Agustus 2026',
+    time: '19:00 - 23:00',
+    location: 'Yogyakarta',
+    price: 'Rp 50.000',
+    capacity: 250,
+    registered: 189,
+    image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?w=800'
   },
   {
     id: 5,
-    title: 'Pertunjukan Spesial: Wayang Kulit Malam Keagamaan',
-    description: 'Pertunjukan wayang kulit tradisional dengan lakon Mahabarata, disertai dengan hidangan makanan tradisional dan acara malam yang meriah.',
-    type: 'Pertunjukan',
-    date: '12 Oktober 2024',
-    time: '19:00 - 02:00 (Malam)',
-    location: 'Pendopo Kampung Seni, Sleman',
-    price: 'Rp 150.000 - Rp 350.000',
-    capacity: 200,
-    registered: 178,
-    image: 'https://images.unsplash.com/photo-1514306688772-87c333ba84e1?w=800'
-  },
-  {
-    id: 6,
-    title: 'Residensi Seni: Proses Penciptaan Seni Rupa',
-    description: 'Program residensi satu bulan untuk seniman visual yang ingin bereksperimen, berkontemplasi, dan berkolaborasi dalam komunitas kami.',
-    type: 'Residensi',
-    date: 'Oktober - November 2024',
-    time: 'Fleksibel',
-    location: 'Studio Kreatif Afternuun',
-    price: 'Rp 5.000.000 (Termasuk Akomodasi)',
-    capacity: 8,
-    registered: 5,
-    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800'
+    title: 'Pemutaran Film Dokumenter Budaya',
+    description: 'Seri pemutaran film dokumenter tentang pelestarian budaya, diikuti dengan diskusi bersama pembuat film dan tokoh budaya.',
+    type: 'Media',
+    date: '20 Agustus 2026',
+    time: '19:00 - 21:30',
+    location: 'Yogyakarta',
+    price: 'Rp 30.000',
+    capacity: 120,
+    registered: 94,
+    image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800'
   }
 ]
 
@@ -108,10 +95,10 @@ function KenduriContent() {
         <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-6 sm:text-5xl">
-              Kenduri Acara & Pameran
+              Kenduri
             </h1>
             <p className="text-xl text-muted-foreground">
-              Ikuti festival, pameran, workshop, dan pertunjukan seni budaya sepanjang tahun.
+              Acara, Pameran, dan Perayaan Karya
             </p>
           </div>
         </section>

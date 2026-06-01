@@ -69,33 +69,33 @@ const impactAreas = [
 
 const partners = [
   {
-    name: 'Universitas Seni Indonesia',
+    name: 'Universitas Islam Negeri Yogyakarta',
     category: 'Akademik',
     image: 'https://images.unsplash.com/photo-1519507676751-0da8d8c5c5e2?w=200&h=200&fit=crop'
   },
   {
-    name: 'Yayasan Budaya Nusantara',
+    name: 'Sanggar Nuun',
     category: 'Budaya',
     image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=200&h=200&fit=crop'
   },
   {
-    name: 'Museum Seni Lokal',
+    name: 'PP Budaya Kaliopak',
     category: 'Warisan',
     image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=200&h=200&fit=crop'
   },
   {
-    name: 'Komunitas Seni Independen',
+    name: 'Teater Eska',
     category: 'Komunitas',
     image: 'https://images.unsplash.com/photo-1516451833694-deb029205a81?w=200&h=200&fit=crop'
   },
   {
-    name: 'Platform Media Seni',
+    name: 'Kalimasada',
     category: 'Media',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop'
   },
   {
-    name: 'Lembaga Penelitian Budaya',
-    category: 'Riset',
+    name: 'PSM Gitasavana',
+    category: 'Musik',
     image: 'https://images.unsplash.com/photo-1507842217343-583f20270319?w=200&h=200&fit=crop'
   }
 ]

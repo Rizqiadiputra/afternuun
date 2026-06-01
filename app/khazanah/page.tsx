@@ -10,75 +10,63 @@ import { useState } from 'react'
 const classes = [
   {
     id: 1,
-    title: 'Wayang Kulit: Seni Pertunjukan Tradisional Jawa',
-    description: 'Pelajari seni pertunjukan wayang kulit tradisional Jawa, dari sejarah, teknik bertabung, hingga pemahaman filosofi di baliknya.',
-    category: 'Seni Pertunjukan',
-    instructor: 'Ki Suradji',
-    schedule: 'Setiap Jumat, 19:00 - 21:00',
+    title: 'Workshop Penulisan Kreatif & Sastra',
+    description: 'Belajar teknik penulisan kreatif, storytelling, dan pengembangan gaya menulis sendiri untuk berbagai genre sastra kontemporer.',
+    category: 'Sastra',
+    instructor: 'Penulis & Sastrawan',
+    schedule: 'Setiap Senin & Rabu, 19:00 - 20:30',
     duration: '8 Minggu',
-    level: 'Pemula',
-    participants: 15,
-    image: 'https://images.unsplash.com/photo-1514306688772-87c333ba84e1?w=800'
+    level: 'Semua Level',
+    participants: 16,
+    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800'
   },
   {
     id: 2,
-    title: 'Batik Tulis: Teknik dan Desain Kontemporer',
-    description: 'Workshop intensif tentang teknik batik tulis tradisional dan eksplorasi desain batik kontemporer untuk perkembangan seni modern.',
-    category: 'Kerajinan Tangan',
-    instructor: 'Siti Nurhaliza',
-    schedule: 'Setiap Sabtu, 10:00 - 12:00',
-    duration: '6 Minggu',
-    level: 'Semua Level',
-    participants: 20,
-    image: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=800'
+    title: 'Kelas Musik Tradisi & Kontemporer',
+    description: 'Mendalami musik tradisional Indonesia dan eksplorasi fusion dengan musik kontemporer melalui instrumen dan komposisi.',
+    category: 'Musik',
+    instructor: 'Musisi Profesional',
+    schedule: 'Setiap Selasa & Kamis, 18:00 - 19:30',
+    duration: '10 Minggu',
+    level: 'Pemula',
+    participants: 14,
+    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800'
   },
   {
     id: 3,
-    title: 'Tari Topeng: Gerakan, Karakter, dan Ekspresi',
-    description: 'Mendalami tari topeng Jawa termasuk gerak dasar, karakterisasi tokoh, dan ekspresi emosional dalam pertunjukan tradisional.',
-    category: 'Tari',
-    instructor: 'Bambang Sutejo',
-    schedule: 'Setiap Selasa & Kamis, 18:00 - 19:30',
-    duration: '10 Minggu',
+    title: 'Studio Seni Rupa & Instalasi',
+    description: 'Eksplorasi berbagai medium seni rupa dari lukisan, patung, hingga instalasi seni interaktif dan kontemporer.',
+    category: 'Seni Rupa',
+    instructor: 'Seniman Rupa',
+    schedule: 'Setiap Sabtu, 10:00 - 12:30',
+    duration: '12 Minggu',
     level: 'Menengah',
     participants: 18,
-    image: 'https://images.unsplash.com/photo-1503853585528-48b4efb9d4d5?w=800'
+    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800'
   },
   {
     id: 4,
-    title: 'Gamelan: Harmoni dalam Musik Tradisional',
-    description: 'Belajar memainkan instrumen gamelan, memahami struktur orkestra, dan sejarah musik tradisional Indonesia yang kaya.',
-    category: 'Musik',
-    instructor: 'Pak Haryo',
-    schedule: 'Setiap Rabu, 19:00 - 20:30',
-    duration: '12 Minggu',
-    level: 'Pemula',
-    participants: 12,
-    image: 'https://images.unsplash.com/photo-1514306688772-87c333ba84e1?w=800'
+    title: 'Workshop Keaktoran & Teater',
+    description: 'Pelajari teknik keaktoran, improvisasi, dan pengekspresian diri melalui seni teater dan pertunjukan langsung.',
+    category: 'Teater',
+    instructor: 'Aktor & Sutradara',
+    schedule: 'Setiap Rabu & Jumat, 17:00 - 18:30',
+    duration: '10 Minggu',
+    level: 'Semua Level',
+    participants: 20,
+    image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?w=800'
   },
   {
     id: 5,
-    title: 'Sastra dan Puisi Jawa Modern',
-    description: 'Eksplorasi sastra Jawa klasik dan modern, menulis puisi dalam bahasa Jawa, serta dialog antara tradisi dan kontemporer.',
-    category: 'Sastra',
-    instructor: 'Dr. Agus Triyanto',
-    schedule: 'Setiap Senin, 19:30 - 21:00',
+    title: 'Kelas Dokumentasi & Media Seni',
+    description: 'Belajar teknik dokumentasi visual, fotografi, videografi, dan produksi media untuk melestarikan dan mempromosikan karya seni.',
+    category: 'Media',
+    instructor: 'Sinematografer & Fotografer',
+    schedule: 'Setiap Minggu, 19:00 - 21:00',
     duration: '8 Minggu',
-    level: 'Menengah',
-    participants: 16,
-    image: 'https://images.unsplash.com/photo-1507842217343-583f20270319?w=800'
-  },
-  {
-    id: 6,
-    title: 'Arsitektur Tradisional Jawa: Filosofi dan Desain',
-    description: 'Mempelajari prinsip-prinsip arsitektur tradisional Jawa, makna simbolis, dan aplikasinya dalam desain kontemporer.',
-    category: 'Arsitektur',
-    instructor: 'Prof. Wawan Setiawan',
-    schedule: 'Setiap Jumat, 14:00 - 16:00',
-    duration: '10 Minggu',
-    level: 'Semua Level',
-    participants: 22,
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800'
+    level: 'Pemula',
+    participants: 12,
+    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800'
   }
 ]
 
@@ -104,10 +92,10 @@ function KhazanahContent() {
         <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-6 sm:text-5xl">
-              Khazanah Kelas & Workshop
+              Khazanah
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Pelajari seni budaya tradisional dan eksplorasi inovasi kontemporer bersama para ahli dan mentor kami.
+              Kelas, Workshop, dan Ruang Belajar Seni-Budaya
             </p>
           </div>
         </section>

@@ -45,6 +45,66 @@ export default function Home() {
       <Navigation />
       
       <main className="flex flex-col">
+        {/* Agenda Section - Moved before Programs */}
+        <section className="px-4 py-20 sm:px-6 lg:px-8 bg-muted/20">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-16 text-center">
+              <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground mb-4">
+                Agenda
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Jelajahi kelas, workshop, acara, dan pameran budaya terbaru kami
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {/* Khazanah Preview */}
+              <Link href="/khazanah">
+                <Card className="h-full cursor-pointer transition-all hover:shadow-lg hover:border-primary overflow-hidden group">
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <NextImage
+                      src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=800"
+                      alt="Workshop Keaktoran"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-foreground group-hover:text-primary transition-colors">
+                      Workshop Keaktoran
+                    </CardTitle>
+                    <CardDescription>
+                      Pelajari teknik keaktoran, improvisasi, dan pengekspresian diri melalui seni pertunjukan bersama instruktur berpengalaman.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+
+              {/* Kenduri Preview */}
+              <Link href="/kenduri">
+                <Card className="h-full cursor-pointer transition-all hover:shadow-lg hover:border-primary overflow-hidden group">
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <NextImage
+                      src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600"
+                      alt="Festival Seni Jawa"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-foreground group-hover:text-primary transition-colors">
+                      Festival Seni Jawa: Lintas Generasi
+                    </CardTitle>
+                    <CardDescription>
+                      Festival seni tiga hari dengan pertunjukan wayang, tari, musik gamelan, dan pameran karya kontemporer.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Hero Section */}
         <section className="relative min-h-screen bg-black px-4 py-20 sm:px-6 lg:px-8 flex items-center">
           <div className="absolute inset-0 z-0">
@@ -126,92 +186,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Sorotan Agenda Section */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8 bg-muted/20">
-          <div className="mx-auto max-w-6xl">
-            <div className="mb-16 text-center">
-              <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground mb-4">
-                Sorotan Agenda
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Jelajahi kelas, workshop, acara, dan pameran budaya terbaru kami
-              </p>
-            </div>
 
-            <div className="grid gap-6 md:grid-cols-2 mb-8">
-              {/* Khazanah Preview */}
-              <Link href="/khazanah">
-                <Card className="h-full cursor-pointer transition-all hover:shadow-lg hover:border-primary overflow-hidden group">
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <NextImage
-                      src="https://images.unsplash.com/photo-1514306688772-87c333ba84e1?w=600"
-                      alt="Wayang Kulit Kelas"
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-foreground group-hover:text-primary transition-colors">
-                      Wayang Kulit: Seni Pertunjukan Tradisional Jawa
-                    </CardTitle>
-                    <CardDescription>
-                      Pelajari seni pertunjukan wayang kulit tradisional Jawa dari Ki Suradji, setiap Jumat malam.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" size="sm" className="gap-2">
-                      Lihat Semua Kelas
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Link>
-
-              {/* Kenduri Preview */}
-              <Link href="/kenduri">
-                <Card className="h-full cursor-pointer transition-all hover:shadow-lg hover:border-primary overflow-hidden group">
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <NextImage
-                      src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600"
-                      alt="Festival Seni Jawa"
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-foreground group-hover:text-primary transition-colors">
-                      Festival Seni Jawa: Lintas Generasi
-                    </CardTitle>
-                    <CardDescription>
-                      Festival seni tiga hari dengan pertunjukan wayang, tari, musik gamelan, dan pameran karya kontemporer.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" size="sm" className="gap-2">
-                      Lihat Semua Acara
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Link>
-            </div>
-
-            <div className="text-center">
-              <Link href="/khazanah">
-                <Button size="lg" variant="secondary" className="gap-2 mr-4">
-                  Jelajahi Khazanah
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/kenduri">
-                <Button size="lg" variant="secondary" className="gap-2">
-                  Jelajahi Kenduri
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className="bg-primary/10 px-4 py-16 sm:px-6 lg:px-8">

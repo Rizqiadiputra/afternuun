@@ -75,40 +75,22 @@ const principles = [
 
 const team = [
   {
-    name: 'Siti Nurhaliza',
-    role: 'Pendiri & Direktur',
-    bio: 'Seniman batik dan budayawan dengan pengalaman lebih dari 15 tahun dalam pelestarian seni tradisional Jawa.',
+    name: 'Zulfan Arif',
+    role: 'Ketua',
+    bio: 'Pemimpin gerakan budaya dan seniman dengan pengalaman puluhan tahun dalam pelestarian dan pengembangan seni tradisional Indonesia.',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop'
   },
   {
-    name: 'Bambang Sutejo',
-    role: 'Kepala Program Seni',
-    bio: 'Penari, koreografer, dan pendidik seni yang berdedikasi untuk menjembatani tari tradisional dengan eksplorasi kontemporer.',
+    name: 'Zusdi F. Arianto',
+    role: 'Sekretaris',
+    bio: 'Pengelola administratif dan strategis yang memastikan kelancaran operasional dan koordinasi program-program Afternuun Indonesia.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
   },
   {
-    name: 'Dr. Agus Triyanto',
-    role: 'Kepala Riset & Dokumentasi',
-    bio: 'Akademisi dan peneliti budaya yang fokus pada metodologi pelestarian dan dokumentasi warisan budaya lokal.',
+    name: 'Wahyudin',
+    role: 'Bendahara',
+    bio: 'Pengelola keuangan dan sumber daya dengan komitmen pada transparansi dan keberlanjutan finansial gerakan kami.',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop'
-  },
-  {
-    name: 'Pak Haryo',
-    role: 'Kepala Sekolah Gamelan',
-    bio: 'Musisi gamelan tradisional dan pendidik yang berkomitmen mengajarkan musik tradisional kepada generasi muda.',
-    image: 'https://images.unsplash.com/photo-1552058544-f6b08d0a6dba?w=400&h=400&fit=crop'
-  },
-  {
-    name: 'Prof. Wawan Setiawan',
-    role: 'Konsultan Arsitektur & Desain',
-    bio: 'Profesor arsitektur dengan keahlian dalam arsitektur tradisional Jawa dan desain berkelanjutan.',
-    image: 'https://images.unsplash.com/photo-1519345291446-c1400ca199e3?w=400&h=400&fit=crop'
-  },
-  {
-    name: 'Komunitas Lokal',
-    role: 'Komunitas & Mitra',
-    bio: 'Ribuan seniman, pelajar, peneliti, dan komunitas lokal yang menjadi jantung gerakan Afternuun Indonesia.',
-    image: 'https://images.unsplash.com/photo-1517849845537-1d51a20414de?w=400&h=400&fit=crop'
   }
 ]
 
@@ -166,7 +148,7 @@ function PerihalKamiContent() {
         <section className="px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Enam Fungsi Strategis</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Fungsi Strategis</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Afternuun Indonesia beroperasi melalui enam fungsi yang saling terintegrasi dan saling menguatkan.
               </p>
@@ -199,7 +181,7 @@ function PerihalKamiContent() {
         <section className="px-4 py-20 sm:px-6 lg:px-8 bg-muted/20">
           <div className="mx-auto max-w-6xl">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Enam Prinsip Inti</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Prinsip Dasar</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Prinsip-prinsip ini memandu setiap keputusan dan aksi kami dalam membangun gerakan budaya yang bermakna.
               </p>
