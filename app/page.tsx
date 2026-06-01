@@ -49,11 +49,12 @@ export default function Home() {
         <section className="relative min-h-screen bg-black px-4 py-20 sm:px-6 lg:px-8 flex items-center">
           <div className="absolute inset-0 z-0">
             <NextImage
-              src="https://images.unsplash.com/photo-1604537466608-109fa2f16c3b?w=1600"
+              src="https://res.cloudinary.com/rizqiadiputra/image/upload/w_1600,q_auto,f_auto/v1780311509/IMG_0109_o6a4pd.jpg"
               alt="Hero Banner"
               fill
               className="object-cover"
               priority
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-black/50"></div>
           </div>
