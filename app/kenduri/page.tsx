@@ -66,12 +66,12 @@ const events = [
 const eventTypes = ['Semua', ...new Set(events.map(e => e.type))]
 
 const galleryPhotos = [
-  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323550/DSC_0225_zuq29k.jpg',
-  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323563/2012-05-13_13.37.39_quiapv.jpg ',
-  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323584/100_8657_ft6zdb.jpg',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1781056354/P1020808_jgketq.png',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1781056379/DSC_0054_kg4jvw.jpg',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1781056414/IMG_1578_sp3puh.jpg',
   'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323616/375796_2346906405893_1647036719_2272604_249076703_n_dbdhva.jpg',
   'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780323631/DSC_0973_mmomf0.jpg',
-  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1780324127/2012-05-13_14.44.27_zzsem1.jpg',
+  'https://res.cloudinary.com/rizqiadiputra/image/upload/v1781058561/IMG_0245_ehfczd.jpg',
 ]
 
 const galleryVideos = [
