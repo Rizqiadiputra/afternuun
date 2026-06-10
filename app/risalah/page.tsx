@@ -7,67 +7,21 @@ import { Button } from '@/components/ui/button'
 import { Calendar, ArrowRight, BookOpen, FileText } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { client, urlFor } from '@/lib/sanity'
+import { risalahListQuery } from '@/lib/queries'
 
-const articles = [
-  {
-    id: 1,
-    title: 'Pentingnya Arsip Budaya dalam Melestarikan Identitas Komunitas',
-    excerpt: 'Mengapa dokumentasi dan pengarsipan karya seni lokal menjadi krusial untuk menjaga warisan budaya dari generasi ke generasi.',
-    date: '15 Juni 2024',
-    category: 'Arsip & Dokumentasi',
-    author: 'Dr. Agus Triyanto',
-    readTime: '5 min baca',
-    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800'
-  },
-  {
-    id: 2,
-    title: 'Kolaborasi Lintas Generasi: Bagaimana Tradisi Bertemu dengan Inovasi',
-    excerpt: 'Eksplorasi cara seniman muda dan senior bekerja sama menciptakan karya yang menghubungkan masa lalu dan masa depan.',
-    date: '10 Juni 2024',
-    category: 'Produksi & Jejaring',
-    author: 'Bambang Sutejo',
-    readTime: '7 min baca',
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800'
-  },
-  {
-    id: 3,
-    title: 'Workshop Seni Digital: Memberdayakan Seniman Lokal melalui Teknologi',
-    excerpt: 'Laporan dari workshop kami tentang bagaimana teknologi digital dapat menjadi alat pemberdayaan untuk seniman kontemporer Indonesia.',
-    date: '5 Juni 2024',
-    category: 'Program & Pendidikan',
-    author: 'Siti Nurhaliza',
-    readTime: '6 min baca',
-    image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800'
-  },
-  {
-    id: 4,
-    title: 'Model Pendanaan Berkelanjutan untuk Organisasi Budaya Independen',
-    excerpt: 'Strategi dan pembelajaran dari berbagai inisiatif budaya tentang cara membangun model pendanaan yang inklusif dan berkelanjutan.',
-    date: '1 Juni 2024',
-    category: 'Pendanaan & Keberlanjutan',
-    author: 'Prof. Wawan Setiawan',
-    readTime: '8 min baca'
-  },
-  {
-    id: 5,
-    title: 'Wawancara: Dialog dengan Pendiri Komunitas Seni Lokal',
-    excerpt: 'Mendengarkan cerita dan visi dari para pemimpin komunitas seni yang telah berkontribusi pada ekosistem budaya Indonesia.',
-    date: '28 Mei 2024',
-    category: 'Wawancara',
-    author: 'Pak Haryo',
-    readTime: '10 min baca'
-  },
-  {
-    id: 6,
-    title: 'Literasi Seni: Mengapa Pendidikan Seni Penting bagi Generasi Muda',
-    excerpt: 'Refleksi tentang peran penting pendidikan seni dalam mengembangkan kreativitas, empati, dan pemahaman budaya pada anak muda.',
-    date: '20 Mei 2024',
-    category: 'Program & Pendidikan',
-    author: 'Dr. Agus Triyanto',
-    readTime: '6 min baca'
-  }
-]
+type Risalah = {
+  _id: string
+  title: string
+  slug: { current: string }
+  author: string
+  publishedAt: string
+  category: string
+  readTime: number
+  excerpt: string
+  image?: any
+}
 
 const researchPapers = [
   {
@@ -131,24 +85,29 @@ const aboutRisalah = {
   paragraphs: [
     'Risalah adalah ruang publikasi Afternuun yang menghimpun artikel, penelitian, wawancara, refleksi, dan berbagai bentuk dokumentasi pengetahuan yang lahir dari praktik seni, budaya, dan pembelajaran lintas generasi.',
     'Melalui Risalah, gagasan tidak berhenti dalam percakapan, tetapi didokumentasikan, dibagikan, dan dikembangkan sebagai sumber pembelajaran bagi publik.',
-    'Risalah menjadi salah satu cara Afternuun merawat dan menyebarluaskan pengetahuan yang lahir dari proses belajar, praktik budaya, penelitian, dan pengalaman lintas generasi.']
+    'Risalah menjadi salah satu cara Afternuun merawat dan menyebarluaskan pengetahuan yang lahir dari proses belajar, praktik budaya, penelitian, dan pengalaman lintas generasi.'
+  ]
 }
-
 
 function RisalahContent() {
   const [activeTab, setActiveTab] = useState('articles')
+  const [articles, setArticles] = useState<Risalah[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const getSlug = (title: string) => {
-    return title.toLowerCase().replace(/[&\s:,.?!]/g, '-').replace(/-+/g, '-').replace(/-$/, '')
-  }
+  useEffect(() => {
+    client.fetch(risalahListQuery).then((data) => {
+      setArticles(data)
+      setLoading(false)
+    })
+  }, [])
 
   return (
     <>
       <Navigation />
-      
+
       <main className="flex flex-col">
         {/* Hero Section */}
-       <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
+        <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4 sm:text-5xl">
               Risalah
@@ -207,62 +166,68 @@ function RisalahContent() {
         {activeTab === 'articles' && (
           <section className="px-4 py-20 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
-              <div className="space-y-6 mb-12">
-                {articles.map((article) => (
-                  <Link key={article.id} href={`/risalah/${getSlug(article.title)}`}>
-                    <Card
-                      className="border-primary/20 hover:shadow-lg transition-all cursor-pointer group overflow-hidden md:flex"
-                    >
-                    {article.image && (
-                      <div className="relative h-48 w-full md:h-auto md:w-48 flex-shrink-0">
-                        <Image
-                          src={article.image}
-                          alt={article.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform"
-                        />
-                      </div>
-                    )}
-                    <div className="flex flex-col w-full">
-                      <CardHeader className="pb-3">
-                        <div className="flex items-start justify-between gap-4 mb-2">
-                          <div>
-                            <p className="text-sm text-muted-foreground mb-2">{article.author}</p>
-                            <CardTitle className="text-foreground text-xl group-hover:text-primary transition-colors line-clamp-2">
-                              {article.title}
-                            </CardTitle>
+              {loading ? (
+                <div className="text-center py-20 text-muted-foreground">Memuat artikel...</div>
+              ) : articles.length === 0 ? (
+                <div className="text-center py-20 text-muted-foreground">Belum ada artikel yang dipublikasikan.</div>
+              ) : (
+                <div className="space-y-6 mb-12">
+                  {articles.map((article) => (
+                    <Link key={article._id} href={`/risalah/${article.slug.current}`}>
+                      <Card className="border-primary/20 hover:shadow-lg transition-all cursor-pointer group overflow-hidden md:flex">
+                        {article.image && (
+                          <div className="relative h-48 w-full md:h-auto md:w-48 flex-shrink-0">
+                            <Image
+                              src={urlFor(article.image).width(400).url()}
+                              alt={article.title}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform"
+                            />
                           </div>
-                          <ArrowRight className="h-5 w-5 text-primary/50 group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
-                        </div>
-                      </CardHeader>
-                      <CardContent className="space-y-4 flex-1">
-                        <CardDescription className="text-foreground/70 leading-relaxed">
-                          {article.excerpt}
-                        </CardDescription>
+                        )}
+                        <div className="flex flex-col w-full">
+                          <CardHeader className="pb-3">
+                            <div className="flex items-start justify-between gap-4 mb-2">
+                              <div>
+                                <p className="text-sm text-muted-foreground mb-2">{article.author}</p>
+                                <CardTitle className="text-foreground text-xl group-hover:text-primary transition-colors line-clamp-2">
+                                  {article.title}
+                                </CardTitle>
+                              </div>
+                              <ArrowRight className="h-5 w-5 text-primary/50 group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
+                            </div>
+                          </CardHeader>
+                          <CardContent className="space-y-4 flex-1">
+                            <CardDescription className="text-foreground/70 leading-relaxed">
+                              {article.excerpt}
+                            </CardDescription>
 
-                        <div className="flex flex-wrap items-center gap-4 text-sm">
-                          <span className="inline-flex items-center gap-2 text-muted-foreground">
-                            <Calendar className="h-4 w-4" />
-                            {article.date}
-                          </span>
-                          <span className="text-muted-foreground">
-                            {article.readTime}
-                          </span>
-                          <span className="px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                            {article.category}
-                          </span>
-                        </div>
+                            <div className="flex flex-wrap items-center gap-4 text-sm">
+                              <span className="inline-flex items-center gap-2 text-muted-foreground">
+                                <Calendar className="h-4 w-4" />
+                                {new Date(article.publishedAt).toLocaleDateString('id-ID', {
+                                  day: 'numeric',
+                                  month: 'long',
+                                  year: 'numeric'
+                                })}
+                              </span>
+                              <span className="text-muted-foreground">{article.readTime} min baca</span>
+                              <span className="px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                                {article.category}
+                              </span>
+                            </div>
 
-                        <Button variant="outline" size="sm" className="gap-2">
-                          Baca Selengkapnya
-                          <ArrowRight className="h-4 w-4" />
-                        </Button>
-                      </CardContent>
-                    </div>
-                  </Card>
-                  </Link>
-                ))}
-              </div>
+                            <Button variant="outline" size="sm" className="gap-2">
+                              Baca Selengkapnya
+                              <ArrowRight className="h-4 w-4" />
+                            </Button>
+                          </CardContent>
+                        </div>
+                      </Card>
+                    </Link>
+                  ))}
+                </div>
+              )}
 
               {/* Newsletter Signup */}
               <div className="bg-primary/10 p-8 rounded-lg text-center space-y-6">
@@ -323,27 +288,19 @@ function RisalahContent() {
 
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                         <div>
-                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">
-                            Jurnal
-                          </p>
+                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">Jurnal</p>
                           <p className="text-foreground">{paper.journal}</p>
                         </div>
                         <div>
-                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">
-                            Tahun
-                          </p>
+                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">Tahun</p>
                           <p className="text-foreground">{paper.year}</p>
                         </div>
                         <div>
-                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">
-                            Volume
-                          </p>
+                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">Volume</p>
                           <p className="text-foreground text-sm">{paper.volume}</p>
                         </div>
                         <div>
-                          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">
-                            Halaman
-                          </p>
+                          <p className="text-xs font-semibolic text-muted-foreground uppercase tracking-wide mb-1">Halaman</p>
                           <p className="text-foreground text-sm">{paper.pages}</p>
                         </div>
                       </div>
