@@ -147,7 +147,7 @@ function RisalahContent() {
                 <BookOpen className="h-4 w-4 inline mr-2" />
                 Publikasi Populer
               </button>
-              <button
+              {/* <button
                 onClick={() => setActiveTab('research')}
                 className={`px-6 py-3 font-medium transition-colors rounded-lg ${
                   activeTab === 'research'
@@ -157,7 +157,7 @@ function RisalahContent() {
               >
                 <FileText className="h-4 w-4 inline mr-2" />
                 Kajian & Penelitian
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
@@ -173,7 +173,7 @@ function RisalahContent() {
               ) : (
                 <div className="space-y-6 mb-12">
                   {articles.map((article) => (
-                    <Link key={article._id} href={`/risalah/${article.slug.current}`}>
+                    <Link key={article._id} href={`/risalah/${article.slug.current}`} className="block">
                       <Card className="border-primary/20 hover:shadow-lg transition-all cursor-pointer group overflow-hidden md:flex">
                         {article.image && (
                           <div className="relative h-48 w-full md:h-auto md:w-48 flex-shrink-0">

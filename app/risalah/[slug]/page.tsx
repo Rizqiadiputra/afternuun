@@ -57,7 +57,6 @@ export default function ArticleDetailPage() {
   const [article, setArticle] = useState<RisalahDetail | null>(null)
   const [loading, setLoading] = useState(true)
   const [downloading, setDownloading] = useState(false)
-  const articleRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     client.fetch(risalahBySlugQuery, { slug }).then((data) => {
@@ -67,52 +66,12 @@ export default function ArticleDetailPage() {
   }, [slug])
 
   const handleDownloadPDF = async () => {
-    if (!articleRef.current || !article) return
+    if (!article) return
     setDownloading(true)
-
     try {
-      const html2canvas = (await import('html2canvas')).default
-      const jsPDF = (await import('jspdf')).default
-
-      const canvas = await html2canvas(articleRef.current, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: '#ffffff',
-        logging: false,
-      })
-
-      const imgData = canvas.toDataURL('image/png')
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
-      })
-
-      const pageWidth = pdf.internal.pageSize.getWidth()
-      const pageHeight = pdf.internal.pageSize.getHeight()
-      const imgWidth = pageWidth
-      const imgHeight = (canvas.height * imgWidth) / canvas.width
-
-      let heightLeft = imgHeight
-      let position = 0
-
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
-      heightLeft -= pageHeight
-
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight
-        pdf.addPage()
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
-        heightLeft -= pageHeight
-      }
-
-      const fileName = article.title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/-+/g, '-')
-        .replace(/^-|-$/g, '')
-
-      pdf.save(`${fileName}.pdf`)
+      const { downloadRisalahPDF } = await import('@/components/risalahpdf')
+      const imageUrl = article.image ? urlFor(article.image).width(800).url() : undefined
+      await downloadRisalahPDF(article, imageUrl)
     } catch (error) {
       console.error('Gagal membuat PDF:', error)
     } finally {
@@ -183,7 +142,7 @@ export default function ArticleDetailPage() {
             </Link>
 
             {/* Area yang akan di-capture untuk PDF */}
-            <article ref={articleRef} className="bg-background">
+            <article className="bg-background">
               <div className="mb-8">
                 <span className="inline-flex text-sm font-medium bg-primary/10 text-primary px-3 py-1 rounded-full mb-4">
                   {article.category}
