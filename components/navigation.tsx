@@ -7,13 +7,13 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
 const navLinks = [
-  { href: '/', label: 'Serambi' },
+  { href: '/', label: 'Beranda' },
   { href: '/perihal-kami', label: 'Perihal Kami' },
-  { href: '/khazanah', label: 'Khazanah' },
-  { href: '/kenduri', label: 'Kenduri' },
-  { href: '/risalah', label: 'Risalah' },
-  { href: '/srawung', label: 'Srawung' },
-  { href: '/dukungan', label: 'Dukungan' },
+  { href: '/literasi', label: 'Literasi' },
+  { href: '/program', label: 'Program' },
+  { href: '/artikel', label: 'Artikel' },
+  { href: '/jejaring', label: 'Jejaring' },
+  { href: '/kerjasama', label: 'Kerjasama' },
   { href: '/kontak', label: 'Kontak' },
 ]
 

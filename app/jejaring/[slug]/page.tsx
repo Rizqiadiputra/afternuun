@@ -25,7 +25,7 @@ const discussions = [
     title: 'Membangun Ekosistem Seni yang Inklusif',
     description: 'Bagaimana kita memastikan bahwa ekosistem seni lokal dapat diakses oleh semua orang, terlepas dari latar belakang ekonomi mereka?',
     date: '20 Juni 2024',
-    author: 'Tim Srawung',
+    author: 'Tim Jejaring',
     participants: 18,
     fullDescription: 'Diskusi ini berfokus pada aksesibilitas dalam seni dan budaya. Peserta membicarakan tentang program subsidi untuk peserta pendidikan seni, strategi pricing yang adil, dan bagaimana komunitas dapat menciptakan ruang yang welcoming bagi semua orang. Isu-isu seperti representasi di dalam komunitas seni, diversity dalam kepemimpinan, dan bagaimana melayani komunitas yang lebih luas juga menjadi bagian dari diskusi.'
   },
@@ -85,10 +85,10 @@ export default function DiscussionDetailPage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-foreground mb-4">Diskusi Tidak Ditemukan</h1>
             <p className="text-muted-foreground mb-8">Maaf, diskusi yang Anda cari tidak tersedia.</p>
-            <Link href="/srawung">
+            <Link href="/jejaring">
               <Button className="gap-2">
                 <ArrowLeft className="h-4 w-4" />
-                Kembali ke Srawung
+                Kembali ke Jejaring
               </Button>
             </Link>
           </div>
@@ -127,10 +127,10 @@ export default function DiscussionDetailPage() {
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
-            <Link href="/srawung">
+            <Link href="/jejaring">
               <Button variant="outline" size="sm" className="mb-6 gap-2">
                 <ArrowLeft className="h-4 w-4" />
-                Kembali ke Srawung
+                Kembali ke Jejaring
               </Button>
             </Link>
 

@@ -11,8 +11,8 @@ import { khazanahClasses, archiveItems } from '@/data/khazanah-classes'
 
 const aboutKhazanah = {
   paragraphs: [
-    'Khazanah adalah ruang pengetahuan Afternuun yang menghimpun pengalaman, praktik artistik, dokumentasi, arsip, dan pembelajaran budaya lintas generasi.',
-    'Kami percaya bahwa seni dan kebudayaan tidak hanya diwariskan melalui karya, tetapi juga melalui pengetahuan, pengalaman, percakapan, dan memori yang terus hidup. Karena itu, Khazanah hadir sebagai ruang belajar bersama untuk merawat sekaligus mengembangkan warisan pengetahuan budaya bagi generasi yang akan datang.',
+    'Literasi adalah ruang pengetahuan Afternuun yang menghimpun pengalaman, praktik artistik, dokumentasi, arsip, dan pembelajaran budaya lintas generasi.',
+    'Kami percaya bahwa seni dan kebudayaan tidak hanya diwariskan melalui karya, tetapi juga melalui pengetahuan, pengalaman, percakapan, dan memori yang terus hidup. Karena itu, Literasi hadir sebagai ruang belajar bersama untuk merawat sekaligus mengembangkan warisan pengetahuan budaya bagi generasi yang akan datang.',
   ]
 }
 const classes = khazanahClasses
@@ -42,7 +42,7 @@ function KhazanahContent() {
         <section className="relative min-h-96 bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8 flex items-center">
           <div className="mx-auto max-w-4xl text-center w-full">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-6 sm:text-5xl">
-              Khazanah
+              Literasi
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
              Merawat Pengetahuan, Menghidupkan Pembelajaran
@@ -50,10 +50,10 @@ function KhazanahContent() {
           </div>
         </section>
 
-        {/* About Khazanah Section */}
+        {/* About Literasi Section */}
         <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Tentang Khazanah</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-8">Tentang Literasi</h2>
             <div className="space-y-6">
               {aboutKhazanah.paragraphs.map((paragraph, idx) => (
                 <p key={idx} className="text-lg text-muted-foreground leading-relaxed">
@@ -71,7 +71,7 @@ function KhazanahContent() {
               Arsip & Dokumentasi
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-16">
-              Selain menghadirkan ruang belajar, Khazanah juga menjadi wadah pengembangan arsip dan dokumentasi budaya yang bertujuan menjaga pengetahuan, pengalaman, dan memori kolektif agar dapat diwariskan kepada generasi berikutnya.
+              Selain menghadirkan ruang belajar, Literasi juga menjadi wadah pengembangan arsip dan dokumentasi budaya yang bertujuan menjaga pengetahuan, pengalaman, dan memori kolektif agar dapat diwariskan kepada generasi berikutnya.
             </p>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {archiveItems.map((item) => (
@@ -98,7 +98,7 @@ function KhazanahContent() {
               ))}
             </div>
             <h3 className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mt-12 pt-12 border-t border-b border-border pb-12">
-              Selain merawat arsip dan pengetahuan, Khazanah juga menghidupkan tradisi belajar bersama melalui berbagai kelas, lokakarya, dan forum pembelajaran yang terbuka bagi publik.
+              Selain merawat arsip dan pengetahuan, Literasi juga menghidupkan tradisi belajar bersama melalui berbagai kelas, lokakarya, dan forum pembelajaran yang terbuka bagi publik.
             </h3>
           </div>
         </section>
@@ -155,7 +155,7 @@ function KhazanahContent() {
                 </p>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {filteredClasses.map((cls) => (
-                    <Link key={cls.id} href={`/khazanah/${getSlug(cls.title)}`}>
+                    <Link key={cls.id} href={`/literasi/${getSlug(cls.title)}`}>
                       <Card className="h-full flex flex-col hover:shadow-lg transition-shadow overflow-hidden cursor-pointer group">
                         <div className="relative h-48 w-full overflow-hidden">
                           <Image
@@ -217,16 +217,16 @@ function KhazanahContent() {
         <section className="bg-primary/10 px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-foreground mb-6">
-              Menjadi Bagian dari Khazanah
+              Menjadi Bagian dari Literasi
             </h2>
             <p className="text-lg text-muted-foreground mb-4">
-              Khazanah tumbuh melalui kontribusi banyak pihak. Anda dapat berpartisipasi sebagai mentor, fasilitator, peneliti, dokumentator, maupun penggerak program pembelajaran dan pengarsipan budaya.
+              Literasi tumbuh melalui kontribusi banyak pihak. Anda dapat berpartisipasi sebagai mentor, fasilitator, peneliti, dokumentator, maupun penggerak program pembelajaran dan pengarsipan budaya.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
               Mari berbagi pengetahuan, pengalaman, dan praktik kebudayaan bersama ekosistem Afternuun.
             </p>
             <Button size="lg" className="gap-2">
-              Bergabung dengan Khazanah
+              Bergabung dengan Literasi
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
@@ -238,6 +238,6 @@ function KhazanahContent() {
   )
 }
 
-export default function Khazanah() {
+export default function Literasi() {
   return <KhazanahContent />
 }

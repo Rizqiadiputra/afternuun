@@ -13,21 +13,18 @@ const programs = [
     icon: BookOpen,
     title: 'Nuun Archive Project',
     description: 'Digitalisasi dan publikasi arsip, dokumentasi naskah, foto, dan video, serta perekaman sejarah lisan lintas generasi.',
-    href: '/risalah',
     image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800'
   },
   {
     icon: Users,
     title: 'Afternuun School',
     description: 'Pendidikan nonformal lintas disiplin melalui kelas, lokakarya, mentoring, residensi, dan forum pengetahuan.',
-    href: '/khazanah',
     image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800'
   },
   {
     icon: Image,
     title: 'Creative Lab & Network',
     description: 'Produksi kolaboratif lintas generasi, jejaring kampus, lembaga budaya, dan media, serta koneksi ke ekosistem kreatif nasional dan internasional.',
-    href: '/kenduri',
     image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800'
   }
 ]
@@ -68,7 +65,7 @@ export default function Home() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/dukungan">
+              <Link href="/kerjasama">
                 <Button size="lg" variant="outline">
                   Dukung Kami
                 </Button>
@@ -90,8 +87,8 @@ export default function Home() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {/* Khazanah Preview */}
-              <Link href="/khazanah">
+              {/* Literasi Preview */}
+              <Link href="/literasi">
                 <Card className="h-full cursor-pointer transition-all hover:shadow-lg hover:border-primary overflow-hidden group">
                   <div className="relative h-48 w-full overflow-hidden">
                     <NextImage
@@ -118,8 +115,8 @@ export default function Home() {
                 </Card>
               </Link>
 
-              {/* Kenduri Preview */}
-              <Link href="/kenduri">
+              {/* Program Preview */}
+              <Link href="/program">
                 <Card className="h-full cursor-pointer transition-all hover:shadow-lg hover:border-primary overflow-hidden group">
                   <div className="relative h-48 w-full overflow-hidden">
                     <NextImage
@@ -165,27 +162,25 @@ export default function Home() {
               {programs.map((program) => {
                 const Icon = program.icon
                 return (
-                  <Link key={program.title} href={program.href}>
-                    <Card className="h-full cursor-pointer transition-all hover:shadow-lg hover:border-primary overflow-hidden">
-                      <div className="relative h-48 w-full overflow-hidden">
-                        <NextImage
-                          src={program.image}
-                          alt={program.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <CardHeader>
-                        <Icon className="h-10 w-10 text-primary mb-2" />
-                        <CardTitle className="text-foreground">{program.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {program.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </Link>
+                  <Card key={program.title} className="h-full overflow-hidden">
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <NextImage
+                        src={program.image}
+                        alt={program.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <Icon className="h-10 w-10 text-primary mb-2" />
+                      <CardTitle className="text-foreground">{program.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {program.description}
+                      </p>
+                    </CardContent>
+                  </Card>
                 )
               })}
             </div>
@@ -210,7 +205,7 @@ export default function Home() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/dukungan">
+              <Link href="/kerjasama">
                 <Button size="lg" variant="outline">
                   Dukung Kami
                 </Button>

@@ -713,7 +713,7 @@ function PerihalKamiContent() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/dukungan">
+              <Link href="/kerjasama">
                 <Button size="lg" variant="outline">
                   Dukung Kami
                 </Button>

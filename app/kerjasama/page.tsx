@@ -113,7 +113,7 @@ const partners = [
 
   const donationMethods = [
     {
-      title: 'Srawung dengan Admin',
+      title: 'Hubungi Admin',
       description: 'Ingin mendukung Afternuun? Hubungi kami terlebih dahulu agar kami dapat membantu menyesuaikan bentuk dukungan yang paling tepat.',
       details: [
         { label: 'WhatsApp', value: '+62 896-4971-9824' },
@@ -171,7 +171,7 @@ function DukunganContent() {
         <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-6 sm:text-5xl">
-              Dukungan
+              Kerjasama
             </h1>
             <p className="text-xl text-muted-foreground">
               Dukung misi kami untuk melestarikan, mempelajari, dan menciptakan budaya Indonesia melalui donasi dan kemitraan
@@ -484,6 +484,6 @@ function DukunganContent() {
   )
 }
 
-export default function Dukungan() {
+export default function Kerjasama() {
   return <DukunganContent />
 }

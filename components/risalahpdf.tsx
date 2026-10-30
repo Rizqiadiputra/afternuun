@@ -248,7 +248,7 @@ function RisalahDocument({ article, imageUrl }: { article: RisalahDetail; imageU
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.siteName}>Afternuun · Risalah</Text>
+          <Text style={styles.siteName}>Afternuun · Artikel</Text>
           <Text style={styles.category}>{article.category}</Text>
         </View>
 

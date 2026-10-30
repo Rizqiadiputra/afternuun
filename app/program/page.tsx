@@ -10,8 +10,8 @@ import { useState } from 'react'
 
 const aboutKenduri = {
   paragraphs: [
-    'Kenduri adalah ruang perjumpaan Afternuun yang menghadirkan berbagai bentuk produksi, presentasi, dan perayaan karya seni-budaya.',
-    'Melalui festival, pertunjukan, pameran, pemutaran film, diskusi, dan berbagai kegiatan lainnya, Kenduri menjadi tempat bertemunya seniman, komunitas, akademisi, dan masyarakat dalam pengalaman budaya yang hidup dan terbuka.'
+    'Program adalah ruang perjumpaan Afternuun yang menghadirkan berbagai bentuk produksi, presentasi, dan perayaan karya seni-budaya.',
+    'Melalui festival, pertunjukan, pameran, pemutaran film, diskusi, dan berbagai kegiatan lainnya, Program menjadi tempat bertemunya seniman, komunitas, akademisi, dan masyarakat dalam pengalaman budaya yang hidup dan terbuka.'
   ]
 }
 
@@ -128,7 +128,7 @@ function KenduriContent() {
         <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-6 sm:text-5xl">
-              Kenduri
+              Program
             </h1>
             <p className="text-xl text-muted-foreground">
               Ruang Perjumpaan, Produksi, dan Perayaan Budaya
@@ -136,10 +136,10 @@ function KenduriContent() {
           </div>
         </section>
 
-        {/* About Kenduri Section */}
+        {/* About Program Section */}
         <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Tentang Kenduri</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-8">Tentang Program</h2>
             <div className="space-y-6">
               {aboutKenduri.paragraphs.map((paragraph, idx) => (
                 <p key={idx} className="text-lg text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ function KenduriContent() {
               Agenda & Peristiwa Budaya
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-16">
-              Kenduri menghadirkan berbagai peristiwa budaya yang menjadi ruang perjumpaan, presentasi karya, pertukaran gagasan, dan pengalaman bersama. Melalui festival, pertunjukan, pameran, pemutaran film, serta forum budaya lainnya, Kenduri menghubungkan karya dengan publik dalam suasana yang hidup dan terbuka.
+              Program menghadirkan berbagai peristiwa budaya yang menjadi ruang perjumpaan, presentasi karya, pertukaran gagasan, dan pengalaman bersama. Melalui festival, pertunjukan, pameran, pemutaran film, serta forum budaya lainnya, Program menghubungkan karya dengan publik dalam suasana yang hidup dan terbuka.
             </p>
             {filteredEvents.length > 0 ? (
               <>
@@ -282,10 +282,10 @@ function KenduriContent() {
         <section className="px-4 py-20 sm:px-6 lg:px-8 bg-muted/20">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              Dokumentasi Kenduri
+              Dokumentasi Program
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto mb-16">
-              Dokumentasi berbagai perjumpaan, pertunjukan, pameran, diskusi, dan peristiwa budaya yang menjadi bagian dari perjalanan Kenduri.
+              Dokumentasi berbagai perjumpaan, pertunjukan, pameran, diskusi, dan peristiwa budaya yang menjadi bagian dari perjalanan Program Afternuun.
             </p>
             {/* Tabs */}
             <div className="flex justify-center gap-4 mb-12">
@@ -429,6 +429,6 @@ function KenduriContent() {
 // Add missing import
 import { Clock } from 'lucide-react'
 
-export default function Kenduri() {
+export default function Program() {
   return <KenduriContent />
 }

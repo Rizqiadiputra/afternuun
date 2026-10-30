@@ -30,28 +30,28 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/khazanah" className="text-muted-foreground hover:text-primary">
-                  Khazanah
+                <Link href="/literasi" className="text-muted-foreground hover:text-primary">
+                  Literasi
                 </Link>
               </li>
               <li>
-                <Link href="/kenduri" className="text-muted-foreground hover:text-primary">
-                  Kenduri
+                <Link href="/program" className="text-muted-foreground hover:text-primary">
+                  Program
                 </Link>
               </li>
               <li>
-                <Link href="/risalah" className="text-muted-foreground hover:text-primary">
-                  Risalah
+                <Link href="/artikel" className="text-muted-foreground hover:text-primary">
+                  Artikel
                 </Link>
               </li>
               <li>
-                <Link href="/ruang-srawung" className="text-muted-foreground hover:text-primary">
-                  Ruang Srawung
+                <Link href="/jejaring" className="text-muted-foreground hover:text-primary">
+                  Jejaring
                 </Link>
               </li>
               <li>
-                <Link href="/dukungan" className="text-muted-foreground hover:text-primary">
-                  Dukungan
+                <Link href="/kerjasama" className="text-muted-foreground hover:text-primary">
+                  Kerjasama
                 </Link>
               </li>
             </ul>

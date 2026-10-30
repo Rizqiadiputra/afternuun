@@ -106,10 +106,10 @@ export default function ClassDetailPage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-foreground mb-4">Kelas Tidak Ditemukan</h1>
             <p className="text-muted-foreground mb-8">Maaf, kelas yang Anda cari tidak tersedia.</p>
-            <Link href="/khazanah">
+            <Link href="/literasi">
               <Button className="gap-2">
                 <ArrowLeft className="h-4 w-4" />
-                Kembali ke Khazanah
+                Kembali ke Literasi
               </Button>
             </Link>
           </div>
@@ -139,10 +139,10 @@ export default function ClassDetailPage() {
         {/* Content */}
         <section className="px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
-            <Link href="/khazanah">
+            <Link href="/literasi">
               <Button variant="outline" size="sm" className="mb-6 gap-2">
                 <ArrowLeft className="h-4 w-4" />
-                Kembali ke Khazanah
+                Kembali ke Literasi
               </Button>
             </Link>
 

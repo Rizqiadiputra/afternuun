@@ -113,7 +113,7 @@ function RuangSrawungContent() {
         <section className="bg-gradient-to-b from-primary/20 to-background px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground mb-6 sm:text-5xl">
-              Srawung
+              Jejaring
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               Forum diskusi, berbagi pengalaman, kolaborasi, dan ajuan terbuka dari komunitas Afternuun.
@@ -170,7 +170,7 @@ function RuangSrawungContent() {
         <section className="px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl space-y-6">
             {filteredDiscussions.map((discussion) => (
-              <Link key={discussion.id} href={`/srawung/${getSlug(discussion.title)}`}>
+              <Link key={discussion.id} href={`/jejaring/${getSlug(discussion.title)}`}>
                 <Card
                   className="hover:shadow-lg transition-all overflow-hidden cursor-pointer group hover:border-primary/50"
                 >
