@@ -13,6 +13,7 @@ type Member = {
   name: string
   role: string
   image?: string
+  imagePosition?: string
 }
 
 const programs = [
@@ -226,7 +227,9 @@ const badanPengurus: Member[] = [
   },
   {
     name: 'Istifadah Nur Rohmah',
-    role: 'Bendahara'
+    role: 'Bendahara',
+    image: '/images/pengurus/istifadah-nur-rohmah.jpg',
+    imagePosition: 'center 21%'
   }
 ]
 
@@ -254,6 +257,7 @@ function MemberCard({ member }: { member: Member }) {
             alt={member.name}
             fill
             className="object-cover hover:scale-105 transition-transform"
+            style={{ objectPosition: member.imagePosition }}
           />
         ) : (
           <User className="h-16 w-16 text-primary/40" />
