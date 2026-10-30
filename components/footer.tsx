@@ -8,10 +8,16 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Afternuun Indonesia</h3>
+            <h3 className="text-lg font-bold text-primary">Afternuun Yogyakarta</h3>
             <p className="text-sm text-muted-foreground">
-              Ruang kolektif lintas generasi untuk seni, pengetahuan, arsip, dan keberlanjutan.
+              Rumah keberlanjutan ekosistem Sanggar Nuun.
             </p>
+            <div className="space-y-1 text-xs text-muted-foreground">
+              <p>Komunitas Budaya Afternuun Yogyakarta</p>
+              <p>SK Menteri Hukum RI Nomor AHU-0004877.AH.01.07.Tahun 2026</p>
+              <p>Akta Notaris Nomor 01 tanggal 15 Juni 2026</p>
+              <p>Salakan RT 02, Potorono, Banguntapan, Bantul, DIY</p>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -56,20 +62,20 @@ export function Footer() {
             <h4 className="font-semibold text-foreground">Hubungi Kami</h4>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:hello@afternuun.id"
+                href="mailto:afternuun.id@gmail.com"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
               >
                 <Mail className="h-4 w-4" />
-                hello@afternuun.id
+                afternuun.id@gmail.com
               </a>
               <a
-                href="https://wa.me/6289653509715"
+                href="https://wa.me/6289649719824"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
               >
                 <MessageCircle className="h-4 w-4" />
-                0896-5350-9715
+                0896-4971-9824
               </a>
               <a
                 href="https://instagram.com/afternuun.id"
@@ -86,7 +92,7 @@ export function Footer() {
 
         {/* Bottom Copyright */}
         <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2026 Afternuun Indonesia. Semua hak dilindungi.</p>
+          <p>&copy; 2026 Afternuun Yogyakarta. Semua hak dilindungi.</p>
         </div>
       </div>
     </footer>

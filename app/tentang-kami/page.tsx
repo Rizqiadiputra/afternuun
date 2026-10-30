@@ -23,8 +23,8 @@ const values = [
 ]
 
 export const metadata = {
-  title: 'Tentang Kami - Afternuun Indonesia',
-  description: 'Pelajari tentang visi, misi, dan nilai-nilai Afternuun Indonesia sebagai ruang kolektif lintas generasi.'
+  title: 'Tentang Kami - Afternuun Yogyakarta',
+  description: 'Pelajari tentang visi, misi, dan nilai-nilai Afternuun Yogyakarta sebagai ruang kolektif lintas generasi.'
 }
 
 export default function TentangKami() {
@@ -40,7 +40,7 @@ export default function TentangKami() {
               Tentang Kami
             </h1>
             <p className="text-xl text-muted-foreground">
-              Mengenal lebih dekat visi, misi, dan perjalanan Afternuun Indonesia
+              Mengenal lebih dekat visi, misi, dan perjalanan Afternuun Yogyakarta
             </p>
           </div>
         </section>
@@ -52,7 +52,7 @@ export default function TentangKami() {
             <div className="relative h-96 w-full overflow-hidden rounded-lg">
               <Image
                 src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200"
-                alt="Komunitas Afternuun Indonesia"
+                alt="Komunitas Afternuun Yogyakarta"
                 fill
                 className="object-cover"
               />
@@ -63,7 +63,7 @@ export default function TentangKami() {
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold text-foreground">Siapa Kami?</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Afternuun Indonesia tumbuh dari pengalaman panjang komunitas, sanggar, dan ruang belajar yang percaya bahwa kebudayaan tidak hanya diwariskan, tetapi juga dirawat, dipelajari, dan diciptakan kembali.
+                  Afternuun Yogyakarta tumbuh dari pengalaman panjang komunitas, sanggar, dan ruang belajar yang percaya bahwa kebudayaan tidak hanya diwariskan, tetapi juga dirawat, dipelajari, dan diciptakan kembali.
                 </p>
               </div>
 
@@ -73,7 +73,7 @@ export default function TentangKami() {
                   Kami membangun ruang yang mempertemukan generasi, pengalaman, dan gagasan. Di sini, arsip bertemu dengan karya baru, tradisi berdialog dengan masa depan, dan kebersamaan menjadi fondasi utama.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Afternuun Indonesia adalah ekosistem: tempat belajar, berkarya, berdiskusi, berjejaring, dan saling menguatkan.
+                  Afternuun Yogyakarta adalah ekosistem: tempat belajar, berkarya, berdiskusi, berjejaring, dan saling menguatkan.
                 </p>
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function TentangKami() {
             <div className="space-y-8 bg-primary/5 p-8 rounded-lg">
               <h2 className="text-3xl font-bold text-foreground">Ekosistem Kami</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Afternuun Indonesia berfungsi sebagai ekosistem yang integral, menciptakan sinergi antara empat pilar utama:
+                Afternuun Yogyakarta berfungsi sebagai ekosistem yang integral, menciptakan sinergi antara empat pilar utama:
               </p>
               <ul className="space-y-4 text-muted-foreground">
                 <li className="flex gap-4">

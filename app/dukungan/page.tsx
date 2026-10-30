@@ -48,23 +48,34 @@ const donationTiers = [
 
 const impactAreas = [
   {
-    icon: Heart,
-    title: 'Pemberdayaan Komunitas',
-    description: 'Mendukung seniman, pelajar, dan komunitas budaya Indonesia untuk berkembang dan berinovasi.',
-    impact: '1,234 seniman & komunitas terlayani'
-  },
-  {
     icon: Banknote,
-    title: 'Pengarsipan & Dokumentasi',
-    description: 'Melestarikan warisan budaya dan sejarah komunitas melalui digitalisasi dan pengarsipan profesional.',
-    impact: '5,000+ aset budaya terdokumentasi'
+    title: 'Nuun Archive Project',
+    description: 'Digitalisasi dan publikasi arsip, dokumentasi naskah, foto, dan video, serta perekaman sejarah lisan lintas generasi.',
+    impact: 'Target tiga tahun: arsip digital dan dokumentasi sejarah lisan'
   },
   {
     icon: TrendingUp,
-    title: 'Program Pendidikan',
-    description: 'Menyediakan workshop, residensi, dan forum pembelajaran untuk generasi muda yang tertarik dengan seni dan budaya.',
-    impact: '150+ workshop & kelas per tahun'
+    title: 'Afternuun School',
+    description: 'Pendidikan nonformal lintas disiplin melalui kelas, lokakarya, mentoring, residensi, dan forum pengetahuan.',
+    impact: 'Target tiga tahun: forum belajar reguler dan produksi karya lintas disiplin'
+  },
+  {
+    icon: Heart,
+    title: 'Creative Lab & Network',
+    description: 'Produksi kolaboratif lintas generasi serta jejaring kampus, lembaga budaya, media, dan ekosistem kreatif.',
+    impact: 'Target tiga tahun: festival, pameran, dan jaringan kolaborasi regional'
   }
+]
+
+const fundingSources = [
+  'Kontribusi Anggota',
+  'Program Pendidikan & Pelatihan',
+  'Proyek Seni & Kebudayaan',
+  'Hibah & Pendanaan Kebudayaan',
+  'Penerbitan & Produksi Kreatif',
+  'Kemitraan Strategis',
+  'Donasi Publik',
+  'Pengembangan Unit Usaha (Selaras Nilai)'
 ]
 
 const partners = [
@@ -105,8 +116,8 @@ const partners = [
       title: 'Srawung dengan Admin',
       description: 'Ingin mendukung Afternuun? Hubungi kami terlebih dahulu agar kami dapat membantu menyesuaikan bentuk dukungan yang paling tepat.',
       details: [
-        { label: 'WhatsApp', value: '+62 896-5350-9715' },
-        { label: 'Email', value: 'hello@afternuun.id' },
+        { label: 'WhatsApp', value: '+62 896-4971-9824' },
+        { label: 'Email', value: 'afternuun.id@gmail.com' },
         { label: 'Dukungan', value: 'Donasi, sponsorship, kolaborasi program, atau kontribusi lainnya.' },
       ]
     },
@@ -207,7 +218,7 @@ function DukunganContent() {
                 <div className="text-center">
                   <h2 className="text-3xl font-bold text-foreground mb-4">Mengapa Mendukung Kami?</h2>
                   <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Dukungan Anda membantu kami menjaga ingatan kolektif, membangun pengetahuan, dan menciptakan masa depan budaya Indonesia yang berkelanjutan.
+                    Afternuun adalah ruang yang hanya dapat hidup apabila dirawat bersama. Dukungan Anda menggerakkan tiga program unggulan kami.
                   </p>
                 </div>
 
@@ -231,6 +242,25 @@ function DukunganContent() {
                       </Card>
                     )
                   })}
+                </div>
+              </div>
+
+              {/* Funding Model */}
+              <div className="space-y-8">
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">Model Keberlanjutan Finansial</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Arsitektur pendanaan yang terdesentralisasi. Tidak bergantung pada satu sumber.
+                  </p>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  {fundingSources.map((source, idx) => (
+                    <div key={source} className="flex gap-3 rounded-lg border border-primary/20 p-4">
+                      <span className="font-bold text-primary flex-shrink-0">{idx + 1}.</span>
+                      <span className="text-foreground">{source}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -334,7 +364,7 @@ function DukunganContent() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Status Organisasi</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Afternuun Indonesia adalah yayasan sosial yang terdaftar dan bersifat nirlaba. Setiap donasi yang diterima akan digunakan sepenuhnya untuk mendukung program-program kami dan memberikan dampak positif bagi komunitas.
+                      Afternuun Yogyakarta adalah perkumpulan nirlaba dengan nama resmi Komunitas Budaya Afternuun Yogyakarta, berdasarkan SK Menteri Hukum Republik Indonesia Nomor AHU-0004877.AH.01.07.Tahun 2026 dan Akta Notaris Nomor 01 tanggal 15 Juni 2026. Setiap donasi yang diterima akan digunakan sepenuhnya untuk mendukung program-program kami dan memberikan dampak positif bagi komunitas.
                     </p>
                   </div>
 
@@ -388,7 +418,7 @@ function DukunganContent() {
                 <div className="text-center">
                   <h2 className="text-3xl font-bold text-foreground mb-4">Model Kemitraan</h2>
                   <p className="text-lg text-muted-foreground">
-                    Berbagai cara untuk berkolaborasi dengan Afternuun Indonesia
+                    Berbagai cara untuk berkolaborasi dengan Afternuun Yogyakarta
                   </p>
                 </div>
 

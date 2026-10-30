@@ -28,7 +28,7 @@ export function Navigation() {
           <Link href="/" className="flex items-center">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-MzAHuXBLeQX7Rh65v75rErZVIhcTUT.png"
-              alt="Afternuun Indonesia"
+              alt="Afternuun Yogyakarta"
               width={48}
               height={48}
               className="h-12 w-12"

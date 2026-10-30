@@ -5,37 +5,30 @@ import { Footer } from '@/components/footer'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ArrowRight, BookOpen, Users, Image, Zap } from 'lucide-react'
+import { ArrowRight, BookOpen, Users, Image } from 'lucide-react'
 import NextImage from 'next/image'
 
 const programs = [
   {
     icon: BookOpen,
-    title: 'Arsip & Dokumentasi',
-    description: 'Merawat ingatan kolektif melalui pengumpulan arsip, dokumentasi karya, cerita, foto, rekaman, dan sejarah komunitas agar tidak hilang oleh waktu.',
-    href: '/kegiatan',
+    title: 'Nuun Archive Project',
+    description: 'Digitalisasi dan publikasi arsip, dokumentasi naskah, foto, dan video, serta perekaman sejarah lisan lintas generasi.',
+    href: '/risalah',
     image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800'
   },
   {
     icon: Users,
-    title: 'Program & Pendidikan',
-    description: 'Menyelenggarakan forum belajar, diskusi, workshop, residensi, dan ruang pembelajaran seni-budaya bagi generasi muda.',
-    href: '/kegiatan',
+    title: 'Afternuun School',
+    description: 'Pendidikan nonformal lintas disiplin melalui kelas, lokakarya, mentoring, residensi, dan forum pengetahuan.',
+    href: '/khazanah',
     image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800'
   },
   {
     icon: Image,
-    title: 'Produksi & Jejaring',
-    description: 'Memfasilitasi produksi karya, pameran, festival, kolaborasi, dan jejaring dengan komunitas, kampus, sekolah, dan lembaga budaya.',
-    href: '/galeri',
+    title: 'Creative Lab & Network',
+    description: 'Produksi kolaboratif lintas generasi, jejaring kampus, lembaga budaya, dan media, serta koneksi ke ekosistem kreatif nasional dan internasional.',
+    href: '/kenduri',
     image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800'
-  },
-  {
-    icon: Zap,
-    title: 'Pendanaan & Keberlanjutan',
-    description: 'Mengembangkan model pendanaan, donasi, publikasi, merchandise, hibah, dan unit usaha sosial untuk menjaga keberlanjutan gerakan.',
-    href: '/donasi',
-    image: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800'
   }
 ]
 
@@ -60,13 +53,13 @@ export default function Home() {
           </div>
           <div className="relative z-10 mx-auto max-w-4xl text-center w-full">
             <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl mb-6">
-              Afternuun <span className="text-primary">Indonesia</span>
+              Afternuun <span className="text-primary">Yogyakarta</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Ruang Kolektif Lintas Generasi untuk Seni, Pengetahuan, Arsip, dan Keberlanjutan.
+              Rumah Keberlanjutan Ekosistem Sanggar Nuun.
             </p>
             <p className="text-balance text-lg text-foreground/80 mb-12 leading-relaxed max-w-2xl mx-auto">
-              Afternuun adalah perkumpulan budaya independen yang lahir dari ikhtiar lintas generasi warga Sanggar Nuun untuk merawat keberlanjutan seni, pengetahuan, arsip, karya, dan jejaring kebudayaan yang telah tumbuh selama lebih dari tiga dekade.
+              Keberlanjutan sebuah tradisi tidak dapat hanya bergantung pada ingatan, romantisme sejarah, atau pergantian generasi yang alamiah. Afternuun lahir sebagai ruang yang secara sengaja dirancang untuk merawat dan mewariskannya.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row justify-center">
               <Link href="/perihal-kami">
@@ -161,14 +154,14 @@ export default function Home() {
           <div className="mx-auto max-w-6xl">
             <div className="mb-16 text-center">
               <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground mb-4">
-                Program Kami
+                Program Unggulan
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ekosistem yang mempertemukan generasi, pengalaman, dan gagasan untuk membangun masa depan budaya Indonesia bersama.
+                Tiga mesin penggerak ekosistem Afternuun yang saling terhubung dan saling menguatkan.
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 md:grid-cols-3">
               {programs.map((program) => {
                 const Icon = program.icon
                 return (
@@ -208,7 +201,7 @@ export default function Home() {
               Bergabunglah dengan Komunitas Kami
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Kami mengundang Anda untuk menjadi bagian dari gerakan kolektif yang merawat, mempelajari, dan menciptakan budaya Indonesia yang berkelanjutan.
+              Afternuun adalah ruang yang hanya dapat hidup apabila dirawat bersama. Pilih peran Anda dalam ekosistem ini: berkarya, berbagi memori, menjadi mentor, mengarsipkan, membuka jejaring, atau mengelola program.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row justify-center">
               <Link href="/kontak">

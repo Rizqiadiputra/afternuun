@@ -179,7 +179,7 @@ export default function Donasi() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Status Organisasi</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Afternuun Indonesia adalah yayasan sosial yang terdaftar dan bersifat nirlaba. Setiap donasi yang diterima akan digunakan sepenuhnya untuk mendukung program-program kami dan memberikan dampak positif bagi komunitas.
+                    Afternuun Yogyakarta adalah perkumpulan nirlaba dengan nama resmi Komunitas Budaya Afternuun Yogyakarta, berdasarkan SK Menteri Hukum Republik Indonesia Nomor AHU-0004877.AH.01.07.Tahun 2026 dan Akta Notaris Nomor 01 tanggal 15 Juni 2026. Setiap donasi yang diterima akan digunakan sepenuhnya untuk mendukung program-program kami dan memberikan dampak positif bagi komunitas.
                   </p>
                 </div>
 
@@ -196,7 +196,7 @@ export default function Donasi() {
                     Jika Anda memiliki pertanyaan tentang donasi atau ingin menjadi sponsor kami, jangan ragu untuk menghubungi kami.
                   </p>
                   <Button asChild>
-                    <a href="mailto:hello@afternuunindonesia.id">
+                    <a href="mailto:afternuun.id@gmail.com">
                       Hubungi Kami
                     </a>
                   </Button>

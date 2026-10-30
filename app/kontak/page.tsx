@@ -114,14 +114,14 @@ export default function Kontak() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@afternuun.id',
-      href: 'mailto:hello@afternuun.id'
+      value: 'afternuun.id@gmail.com',
+      href: 'mailto:afternuun.id@gmail.com'
     },
     {
       icon: Phone,
       title: 'WhatsApp',
-      value: '0896-5350-9715',
-      href: 'https://wa.me/6289653509715'
+      value: '0896-4971-9824',
+      href: 'https://wa.me/6289649719824'
     },
     {
       icon: MapPin,

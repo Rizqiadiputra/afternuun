@@ -63,8 +63,8 @@ const articles = [
 ]
 
 export const metadata = {
-  title: 'Artikel - Afternuun Indonesia',
-  description: 'Baca artikel, wawancara, dan refleksi tentang seni, budaya, dan keberlanjutan di Afternuun Indonesia.'
+  title: 'Artikel - Afternuun Yogyakarta',
+  description: 'Baca artikel, wawancara, dan refleksi tentang seni, budaya, dan keberlanjutan di Afternuun Yogyakarta.'
 }
 
 export default function Artikel() {
@@ -146,7 +146,7 @@ export default function Artikel() {
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-2">Langgani Newsletter Kami</h2>
                 <p className="text-muted-foreground">
-                  Dapatkan artikel terbaru, update program, dan berita dari Afternuun Indonesia langsung ke email Anda.
+                  Dapatkan artikel terbaru, update program, dan berita dari Afternuun Yogyakarta langsung ke email Anda.
                 </p>
               </div>
 
