@@ -368,7 +368,7 @@ function PerihalKamiContent() {
               
               <div className="relative h-96 w-full overflow-hidden rounded-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800"
+                  src="/images/perihal-kami.jpg"
                   alt="Komunitas Afternuun"
                   fill
                   className="object-cover"

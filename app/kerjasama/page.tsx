@@ -82,32 +82,31 @@ const partners = [
   {
     name: 'Universitas Islam Negeri Yogyakarta',
     category: 'Akademik',
-    image: 'https://upload.wikimedia.org/wikipedia/id/thumb/5/52/Logo_UIN_Sunan_Kalijaga.svg/200px-Logo_UIN_Sunan_Kalijaga.svg.png'
+    image: '/logos/uin-sunan-kalijaga.png'
   },
   {
     name: 'Sanggar Nuun',
     category: 'Budaya',
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=200&h=200&fit=crop'
+    image: '/logos/sanggar-nuun.jpg'
   },
   {
     name: 'PP Budaya Kaliopak',
     category: 'Warisan',
-    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=200&h=200&fit=crop'
+    image: '/logos/kaliopak.jpg'
   },
   {
     name: 'Teater Eska',
     category: 'Komunitas',
-    image: 'https://images.unsplash.com/photo-1516451833694-deb029205a81?w=200&h=200&fit=crop'
+    image: '/logos/teater-eska.jpg'
   },
   {
     name: 'Kalimasada',
-    category: 'Media',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop'
+    category: 'Media'
   },
   {
     name: 'PSM Gitasavana',
     category: 'Musik',
-    image: 'https://images.unsplash.com/photo-1507842217343-583f20270319?w=200&h=200&fit=crop'
+    image: '/logos/gita-savana.jpg'
   }
 ]
 
@@ -121,15 +120,16 @@ const partners = [
         { label: 'Dukungan', value: 'Donasi, sponsorship, kolaborasi program, atau kontribusi lainnya.' },
       ]
     },
-  // {
-  //   title: 'Transfer Bank',
-  //   description: 'Donasi langsung melalui transfer ke rekening resmi kami',
-  //   details: [
-  //     { label: 'Bank', value: 'BCA' },
-  //     { label: 'Nomor Rekening', value: '1234567890' },
-  //     { label: 'Atas Nama', value: 'Yayasan Afternuun Indonesia' },
-  //   ]
-  // },
+    {
+      title: 'Transfer Bank',
+      description: 'Donasi langsung melalui transfer ke rekening resmi kami',
+      qris: '/qris.jpeg',
+      details: [
+        { label: 'Bank', value: 'Bank Syariah Indonesia (BSI)' },
+        { label: 'Nomor Rekening', value: '7370423835' },
+        { label: 'Atas Nama', value: 'Komunitas Budaya Afternuun' },
+      ]
+    },
   // {
   //   title: 'E-Wallet',
   //   description: 'Donasi melalui berbagai platform pembayaran digital',
@@ -321,17 +321,27 @@ function DukunganContent() {
                         <CardDescription>{method.description}</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-4">
-                        <div className="grid gap-4 md:grid-cols-3 bg-muted/30 p-4 rounded">
-                          {method.details.map((detail) => (
-                            <div key={detail.label} className="space-y-1">
-                              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                                {detail.label}
-                              </p>
-                              <p className="font-mono text-sm text-foreground break-all">
-                                {detail.value}
-                              </p>
+                        <div className={method.qris ? 'grid gap-4 md:grid-cols-[1fr_auto] md:items-center' : undefined}>
+                          <div className={`grid gap-4 bg-muted/30 p-4 rounded ${method.qris ? '' : 'md:grid-cols-3'}`}>
+                            {method.details.map((detail) => (
+                              <div key={detail.label} className="space-y-1">
+                                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                                  {detail.label}
+                                </p>
+                                <p className="font-mono text-sm text-foreground break-all">
+                                  {detail.value}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                          {method.qris && (
+                            <div className="space-y-2 text-center">
+                              <div className="mx-auto w-fit rounded bg-white p-3">
+                                <Image src={method.qris} alt="QRIS Komunitas Budaya Afternuun" width={200} height={202} />
+                              </div>
+                              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Pindai QRIS</p>
                             </div>
-                          ))}
+                          )}
                         </div>
                         <Button
                           className="w-full gap-2"
@@ -396,13 +406,17 @@ function DukunganContent() {
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                   {partners.map((partner) => (
                     <Card key={partner.name} className="hover:shadow-lg transition-shadow overflow-hidden">
-                      <div className="relative h-32 w-full overflow-hidden">
-                        <Image
-                          src={partner.image}
-                          alt={partner.name}
-                          fill
-                          className="object-cover hover:scale-105 transition-transform"
-                        />
+                      <div className={`relative flex h-32 w-full items-center justify-center overflow-hidden ${partner.image ? 'bg-white' : 'bg-primary/10'}`}>
+                        {partner.image ? (
+                          <Image
+                            src={partner.image}
+                            alt={`Logo ${partner.name}`}
+                            fill
+                            className="object-contain p-3"
+                          />
+                        ) : (
+                          <Handshake className="h-12 w-12 text-primary/40" />
+                        )}
                       </div>
                       <CardHeader>
                         <CardTitle className="text-lg">{partner.name}</CardTitle>

@@ -5,34 +5,18 @@ import { Footer } from '@/components/footer'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Heart, Banknote, TrendingUp, Check, Copy } from 'lucide-react'
+import Image from 'next/image'
 import { useState } from 'react'
 
 const donationMethods = [
   {
     title: 'Transfer Bank',
     description: 'Donasi langsung melalui transfer ke rekening resmi kami',
+    qris: '/qris.jpeg',
     details: [
-      { label: 'Bank', value: 'BCA' },
-      { label: 'Nomor Rekening', value: '1234567890' },
-      { label: 'Atas Nama', value: 'Yayasan Afternuun Indonesia' },
-    ]
-  },
-  {
-    title: 'E-Wallet',
-    description: 'Donasi melalui berbagai platform pembayaran digital',
-    details: [
-      { label: 'GCash', value: '+62 812 3456 7890' },
-      { label: 'DANA', value: '+62 812 3456 7890' },
-      { label: 'OVO', value: '+62 812 3456 7890' },
-    ]
-  },
-  {
-    title: 'Transfer Internasional',
-    description: 'Dukungan dari donatur di luar Indonesia',
-    details: [
-      { label: 'Swift Code', value: 'BCAIIDJA' },
-      { label: 'IBAN', value: 'ID12BCAA1234567890' },
-      { label: 'Atas Nama', value: 'Afternuun Indonesia Foundation' },
+      { label: 'Bank', value: 'Bank Syariah Indonesia (BSI)' },
+      { label: 'Nomor Rekening', value: '7370423835' },
+      { label: 'Atas Nama', value: 'Komunitas Budaya Afternuun' },
     ]
   }
 ]
@@ -136,17 +120,27 @@ export default function Donasi() {
                       <CardDescription>{method.description}</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <div className="grid gap-4 md:grid-cols-3 bg-muted/30 p-4 rounded">
-                        {method.details.map((detail) => (
-                          <div key={detail.label} className="space-y-1">
-                            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                              {detail.label}
-                            </p>
-                            <p className="font-mono text-sm text-foreground break-all">
-                              {detail.value}
-                            </p>
+                      <div className={method.qris ? 'grid gap-4 md:grid-cols-[1fr_auto] md:items-center' : undefined}>
+                        <div className={`grid gap-4 bg-muted/30 p-4 rounded ${method.qris ? '' : 'md:grid-cols-3'}`}>
+                          {method.details.map((detail) => (
+                            <div key={detail.label} className="space-y-1">
+                              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                                {detail.label}
+                              </p>
+                              <p className="font-mono text-sm text-foreground break-all">
+                                {detail.value}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                        {method.qris && (
+                          <div className="space-y-2 text-center">
+                            <div className="mx-auto w-fit rounded bg-white p-3">
+                              <Image src={method.qris} alt="QRIS Komunitas Budaya Afternuun" width={200} height={202} />
+                            </div>
+                            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Pindai QRIS</p>
                           </div>
-                        ))}
+                        )}
                       </div>
                       <Button
                         className="w-full gap-2"

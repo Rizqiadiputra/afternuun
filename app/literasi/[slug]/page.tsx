@@ -24,7 +24,8 @@ const classes = [
     participants: 16,
     location: 'Yogyakarta',
     price: 'Rp 500.000',
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800'
+    image: '/images/literasi/workshop-penulisan-kreatif-sastra.jpg',
+    imagePosition: 'center 15%'
   },
   {
     id: 2,
@@ -40,7 +41,7 @@ const classes = [
     participants: 14,
     location: 'Yogyakarta',
     price: 'Rp 750.000',
-    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800'
+    image: '/images/literasi/kelas-musik-tradisi-kontemporer.jpg'
   },
   {
     id: 3,
@@ -56,7 +57,7 @@ const classes = [
     participants: 18,
     location: 'Yogyakarta',
     price: 'Rp 1.000.000',
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800'
+    image: '/images/literasi/studio-seni-rupa-instalasi.jpg'
   },
   {
     id: 4,
@@ -72,7 +73,7 @@ const classes = [
     participants: 20,
     location: 'Yogyakarta',
     price: 'Rp 600.000',
-    image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?w=800'
+    image: '/images/literasi/workshop-keaktoran-teater.jpg'
   },
   {
     id: 5,
@@ -88,7 +89,7 @@ const classes = [
     participants: 12,
     location: 'Yogyakarta',
     price: 'Rp 800.000',
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800'
+    image: '/images/literasi/kelas-dokumentasi-media-seni.jpg'
   }
 ]
 
@@ -131,6 +132,7 @@ export default function ClassDetailPage() {
             alt={classData.title}
             fill
             className="object-cover"
+            style={{ objectPosition: classData.imagePosition }}
             priority
           />
           <div className="absolute inset-0 bg-black/30"></div>

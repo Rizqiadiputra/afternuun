@@ -13,19 +13,20 @@ const programs = [
     icon: BookOpen,
     title: 'Nuun Archive Project',
     description: 'Digitalisasi dan publikasi arsip, dokumentasi naskah, foto, dan video, serta perekaman sejarah lisan lintas generasi.',
-    image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800'
+    image: '/images/beranda/nuun-archive-project.jpg'
   },
   {
     icon: Users,
     title: 'Afternuun School',
     description: 'Pendidikan nonformal lintas disiplin melalui kelas, lokakarya, mentoring, residensi, dan forum pengetahuan.',
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800'
+    image: '/images/beranda/afternuun-school.jpg',
+    imagePosition: 'center 20%'
   },
   {
     icon: Image,
     title: 'Creative Lab & Network',
     description: 'Produksi kolaboratif lintas generasi, jejaring kampus, lembaga budaya, dan media, serta koneksi ke ekosistem kreatif nasional dan internasional.',
-    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800'
+    image: '/images/beranda/creative-lab-network.jpg'
   }
 ]
 
@@ -92,7 +93,7 @@ export default function Home() {
                 <Card className="h-full cursor-pointer transition-all hover:shadow-lg hover:border-primary overflow-hidden group">
                   <div className="relative h-48 w-full overflow-hidden">
                     <NextImage
-                      src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=800"
+                      src="/images/beranda/workshop-keaktoran.jpg"
                       alt="Workshop Keaktoran"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform"
@@ -120,7 +121,7 @@ export default function Home() {
                 <Card className="h-full cursor-pointer transition-all hover:shadow-lg hover:border-primary overflow-hidden group">
                   <div className="relative h-48 w-full overflow-hidden">
                     <NextImage
-                      src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600"
+                      src="/images/beranda/festival-seni-lintas-generasi.jpg"
                       alt="Festival Seni"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform"
@@ -169,6 +170,7 @@ export default function Home() {
                         alt={program.title}
                         fill
                         className="object-cover"
+                        style={{ objectPosition: program.imagePosition }}
                       />
                     </div>
                     <CardHeader>

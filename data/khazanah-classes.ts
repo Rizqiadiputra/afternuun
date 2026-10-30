@@ -9,7 +9,8 @@ export const khazanahClasses = [
     duration: '8 Minggu',
     level: 'Semua Level',
     participants: 16,
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800'
+    image: '/images/literasi/workshop-penulisan-kreatif-sastra.jpg',
+    imagePosition: 'center 15%'
   },
   {
     id: 2,
@@ -21,7 +22,7 @@ export const khazanahClasses = [
     duration: '10 Minggu',
     level: 'Pemula',
     participants: 14,
-    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800'
+    image: '/images/literasi/kelas-musik-tradisi-kontemporer.jpg'
   },
   {
     id: 3,
@@ -33,7 +34,7 @@ export const khazanahClasses = [
     duration: '12 Minggu',
     level: 'Menengah',
     participants: 18,
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800'
+    image: '/images/literasi/studio-seni-rupa-instalasi.jpg'
   },
   {
     id: 4,
@@ -45,7 +46,7 @@ export const khazanahClasses = [
     duration: '10 Minggu',
     level: 'Semua Level',
     participants: 20,
-    image: 'https://images.unsplash.com/photo-1503095396549-807759245b35?w=800'
+    image: '/images/literasi/workshop-keaktoran-teater.jpg'
   },
   {
     id: 5,
@@ -57,7 +58,7 @@ export const khazanahClasses = [
     duration: '8 Minggu',
     level: 'Pemula',
     participants: 12,
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800'
+    image: '/images/literasi/kelas-dokumentasi-media-seni.jpg'
   }
 ]
 
