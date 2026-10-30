@@ -37,41 +37,40 @@ export default function Home() {
       
       <main className="flex flex-col">
         {/* Hero Section */}
-        <section className="relative min-h-screen bg-black px-4 py-20 sm:px-6 lg:px-8 flex items-center">
+        <section className="relative min-h-[calc(100vh-4rem)] bg-black px-4 pt-20 pb-24 sm:px-6 lg:px-8 flex items-end">
           <div className="absolute inset-0 z-0">
             <NextImage
               src="https://res.cloudinary.com/rizqiadiputra/image/upload/w_1600,q_auto,f_auto/v1780311509/IMG_0109_o6a4pd.jpg"
-              alt="Hero Banner"
+              alt="Foto bersama warga Sanggar Nuun, 1995"
               fill
               className="object-cover"
               priority
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-black/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20"></div>
           </div>
           <div className="relative z-10 mx-auto max-w-4xl text-center w-full">
             <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl mb-6">
               Afternuun <span className="text-primary">Yogyakarta</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-balance text-xl text-foreground/90 mb-10 leading-relaxed">
               Rumah Keberlanjutan Ekosistem Sanggar Nuun.
             </p>
-            <p className="text-balance text-lg text-foreground/80 mb-12 leading-relaxed max-w-2xl mx-auto">
+            <Link href="/perihal-kami">
+              <Button size="lg" className="gap-2">
+                Pelajari Lebih Lanjut
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </section>
+
+        {/* Intro Section */}
+        <section className="px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-balance text-xl text-muted-foreground leading-relaxed">
               Keberlanjutan sebuah tradisi tidak dapat hanya bergantung pada ingatan, romantisme sejarah, atau pergantian generasi yang alamiah. Afternuun lahir sebagai ruang yang secara sengaja dirancang untuk merawat dan mewariskannya.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row justify-center">
-              <Link href="/perihal-kami">
-                <Button size="lg" className="gap-2">
-                  Pelajari Lebih Lanjut
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/kerjasama">
-                <Button size="lg" variant="outline">
-                  Dukung Kami
-                </Button>
-              </Link>
-            </div>
           </div>
         </section>
 

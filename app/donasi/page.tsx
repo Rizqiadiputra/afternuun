@@ -180,7 +180,7 @@ export default function Donasi() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Transparansi Keuangan</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Kami berkomitmen pada transparansi penuh dalam pengelolaan dana. Laporan keuangan dan penggunaan dana tersedia untuk disertifikasi oleh auditor independen setiap tahunnya.
+                    Kami berkomitmen menjaga transparansi dalam pengelolaan dana.
                   </p>
                 </div>
 

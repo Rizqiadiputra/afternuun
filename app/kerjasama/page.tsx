@@ -6,45 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Heart, Banknote, TrendingUp, Handshake, ArrowRight, Check, Copy } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
-
-const donationTiers = [
-  {
-    name: 'Pendukung Komunitas',
-    amount: 'Rp 100.000 - Rp 500.000',
-    description: 'Dukungan rutin dari individu yang percaya pada misi kami',
-    benefits: [
-      'Akses eksklusif ke konten komunitas',
-      'Nama di halaman donatur',
-      'Update bulanan program kami',
-      'Diskon khusus untuk acara'
-    ]
-  },
-  {
-    name: 'Mitra Budaya',
-    amount: 'Rp 1.000.000 - Rp 5.000.000',
-    description: 'Komitmen jangka panjang untuk mendukung program budaya kami',
-    benefits: [
-      'Semua benefit Pendukung Komunitas',
-      'Akses ke forum khusus donatur',
-      'Laporan dampak kuartalan',
-      'Logo di website kami',
-      'Undangan ke acara eksklusif'
-    ]
-  },
-  {
-    name: 'Patron Budaya',
-    amount: 'Rp 5.000.000+',
-    description: 'Dukungan signifikan untuk proyek-proyek strategis kami',
-    benefits: [
-      'Semua benefit Mitra Budaya',
-      'Naming rights untuk program tertentu',
-      'Laporan dampak khusus',
-      'Akses langsung ke tim kami',
-      'Kesempatan berkolaborasi dalam desain program'
-    ]
-  }
-]
 
 const impactAreas = [
   {
@@ -112,15 +75,6 @@ const partners = [
 
   const donationMethods = [
     {
-      title: 'Hubungi Admin',
-      description: 'Ingin mendukung Afternuun? Hubungi kami terlebih dahulu agar kami dapat membantu menyesuaikan bentuk dukungan yang paling tepat.',
-      details: [
-        { label: 'WhatsApp', value: '+62 896-4971-9824' },
-        { label: 'Email', value: 'afternuun.id@gmail.com' },
-        { label: 'Dukungan', value: 'Donasi, sponsorship, kolaborasi program, atau kontribusi lainnya.' },
-      ]
-    },
-    {
       title: 'Transfer Bank',
       description: 'Donasi langsung melalui transfer ke rekening resmi kami',
       qris: '/qris.jpeg',
@@ -128,6 +82,15 @@ const partners = [
         { label: 'Bank', value: 'Bank Syariah Indonesia (BSI)' },
         { label: 'Nomor Rekening', value: '7370423835' },
         { label: 'Atas Nama', value: 'Komunitas Budaya Afternuun' },
+      ]
+    },
+    {
+      title: 'Hubungi Admin',
+      description: 'Ingin mendukung Afternuun? Hubungi kami terlebih dahulu agar kami dapat membantu menyesuaikan bentuk dukungan yang paling tepat.',
+      details: [
+        { label: 'WhatsApp', value: '+62 896-4971-9824' },
+        { label: 'Email', value: 'afternuun.id@gmail.com' },
+        { label: 'Dukungan', value: 'Donasi, sponsorship, kolaborasi program, atau kontribusi lainnya.' },
       ]
     },
   // {
@@ -213,97 +176,6 @@ function DukunganContent() {
         {activeTab === 'donation' && (
           <section className="px-4 py-20 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-6xl space-y-20">
-              {/* Why Donate */}
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h2 className="text-3xl font-bold text-foreground mb-4">Mengapa Mendukung Kami?</h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Afternuun adalah ruang yang hanya dapat hidup apabila dirawat bersama. Dukungan Anda menggerakkan tiga program unggulan kami.
-                  </p>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-3">
-                  {impactAreas.map((area) => {
-                    const Icon = area.icon
-                    return (
-                      <Card key={area.title} className="border-primary/20 hover:shadow-lg transition-shadow">
-                        <CardHeader>
-                          <Icon className="h-10 w-10 text-primary mb-2" />
-                          <CardTitle className="text-foreground">{area.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-2">
-                          <p className="text-muted-foreground leading-relaxed">
-                            {area.description}
-                          </p>
-                          <p className="text-sm font-semibold text-primary">
-                            {area.impact}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    )
-                  })}
-                </div>
-              </div>
-
-              {/* Funding Model */}
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h2 className="text-3xl font-bold text-foreground mb-4">Model Keberlanjutan Finansial</h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Arsitektur pendanaan yang terdesentralisasi. Tidak bergantung pada satu sumber.
-                  </p>
-                </div>
-
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                  {fundingSources.map((source, idx) => (
-                    <div key={source} className="flex gap-3 rounded-lg border border-primary/20 p-4">
-                      <span className="font-bold text-primary flex-shrink-0">{idx + 1}.</span>
-                      <span className="text-foreground">{source}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Donation Tiers */}
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h2 className="text-3xl font-bold text-foreground mb-4">Pilih Tingkat Dukungan</h2>
-                  <p className="text-lg text-muted-foreground">
-                    Berbagai opsi dukungan dengan benefit yang disesuaikan
-                  </p>
-                </div>
-
-                <div className="grid gap-8 md:grid-cols-3">
-                  {donationTiers.map((tier) => (
-                    <Card key={tier.name} className="hover:shadow-lg transition-shadow border-primary/20 flex flex-col">
-                      <CardHeader>
-                        <CardTitle className="text-foreground text-2xl">{tier.name}</CardTitle>
-                        <CardDescription className="text-lg font-semibold text-primary">
-                          {tier.amount}
-                        </CardDescription>
-                        <p className="text-sm text-muted-foreground mt-2">
-                          {tier.description}
-                        </p>
-                      </CardHeader>
-                      <CardContent className="flex-1 space-y-6">
-                        <ul className="space-y-3">
-                          {tier.benefits.map((benefit) => (
-                            <li key={benefit} className="flex items-start gap-3">
-                              <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-foreground/80">{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        <Button className="w-full gap-2">
-                          Donasi Sekarang
-                          <ArrowRight className="h-4 w-4" />
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
               {/* Donation Methods */}
               <div className="space-y-8">
                 <div className="text-center">
@@ -366,6 +238,57 @@ function DukunganContent() {
                 </div>
               </div>
 
+              {/* Why Donate */}
+              <div className="space-y-8">
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">Mengapa Mendukung Kami?</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Afternuun adalah ruang yang hanya dapat hidup apabila dirawat bersama. Dukungan Anda menggerakkan tiga program unggulan kami.
+                  </p>
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-3">
+                  {impactAreas.map((area) => {
+                    const Icon = area.icon
+                    return (
+                      <Card key={area.title} className="border-primary/20 hover:shadow-lg transition-shadow">
+                        <CardHeader>
+                          <Icon className="h-10 w-10 text-primary mb-2" />
+                          <CardTitle className="text-foreground">{area.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-2">
+                          <p className="text-muted-foreground leading-relaxed">
+                            {area.description}
+                          </p>
+                          <p className="text-sm font-semibold text-primary">
+                            {area.impact}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Funding Model */}
+              <div className="space-y-8">
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">Model Keberlanjutan Finansial</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Arsitektur pendanaan yang terdesentralisasi. Tidak bergantung pada satu sumber.
+                  </p>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  {fundingSources.map((source, idx) => (
+                    <div key={source} className="flex gap-3 rounded-lg border border-primary/20 p-4">
+                      <span className="font-bold text-primary flex-shrink-0">{idx + 1}.</span>
+                      <span className="text-foreground">{source}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Additional Info */}
               <div className="space-y-8 bg-primary/5 p-8 rounded-lg">
                 <h2 className="text-2xl font-bold text-foreground">Informasi Tambahan</h2>
@@ -381,7 +304,7 @@ function DukunganContent() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Transparansi Keuangan</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Kami berkomitmen pada transparansi penuh dalam pengelolaan dana. Laporan keuangan dan penggunaan dana tersedia untuk disertifikasi oleh auditor independen setiap tahunnya.
+                      Kami berkomitmen menjaga transparansi dalam pengelolaan dana.
                     </p>
                   </div>
                 </div>
@@ -399,7 +322,7 @@ function DukunganContent() {
                 <div className="text-center">
                   <h2 className="text-3xl font-bold text-foreground mb-4">Kemitraan Budaya</h2>
                   <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Kami bermitra dengan universitas, museum, organisasi budaya, dan komunitas untuk memperkuat ekosistem budaya Indonesia.
+                    Kami bermitra dengan kampus, lembaga budaya, media, dan komunitas untuk memperkuat ekosistem budaya Indonesia.
                   </p>
                 </div>
 
@@ -427,48 +350,6 @@ function DukunganContent() {
                 </div>
               </div>
 
-              {/* Partnership Models */}
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h2 className="text-3xl font-bold text-foreground mb-4">Model Kemitraan</h2>
-                  <p className="text-lg text-muted-foreground">
-                    Berbagai cara untuk berkolaborasi dengan Afternuun Yogyakarta
-                  </p>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2">
-                  {[
-                    {
-                      title: 'Kemitraan Program',
-                      description: 'Berkolaborasi dalam menyelenggarakan workshop, kelas, dan acara budaya bersama.'
-                    },
-                    {
-                      title: 'Kemitraan Penelitian',
-                      description: 'Bekerja sama dalam penelitian, dokumentasi, dan advokasi budaya lokal.'
-                    },
-                    {
-                      title: 'Kemitraan Akses',
-                      description: 'Membuka akses ke koleksi, arsip, atau platform untuk kepentingan budaya bersama.'
-                    },
-                    {
-                      title: 'Kemitraan Advokasi',
-                      description: 'Bersama-sama memperjuangkan kebijakan dan lingkungan yang mendukung pelestarian budaya.'
-                    }
-                  ].map((model) => (
-                    <Card key={model.title} className="hover:shadow-lg transition-shadow">
-                      <CardHeader>
-                        <CardTitle className="text-lg">{model.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {model.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
               {/* CTA for Partnership */}
               <div className="bg-primary/10 p-12 rounded-lg text-center space-y-6">
                 <div>
@@ -483,10 +364,12 @@ function DukunganContent() {
                   </p>
                 </div>
 
-                <Button size="lg" className="gap-2">
-                  Hubungi Kami
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
+                <Link href="/kontak">
+                  <Button size="lg" className="gap-2">
+                    Hubungi Kami
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </section>

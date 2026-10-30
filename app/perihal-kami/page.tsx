@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Users, Lightbulb, User } from 'lucide-react'
@@ -49,7 +50,8 @@ const programs = [
 const whyEstablished = {
   paragraphs: [
     'Selama tiga dekade, Sanggar Nuun menjadi ruang lahirnya karya, pengetahuan, dan pembentukan cara pandang berkesenian bagi banyak generasi.',
-    'Namun keberlanjutan sebuah tradisi tidak dapat hanya bergantung pada ingatan, romantisme sejarah, atau pergantian generasi yang alamiah. Afternuun lahir sebagai ruang yang secara sengaja dirancang untuk merawat dan mewariskannya.'
+    'Namun keberlanjutan sebuah tradisi tidak dapat hanya bergantung pada ingatan, romantisme sejarah, atau pergantian generasi yang alamiah. Afternuun lahir sebagai ruang yang secara sengaja dirancang untuk merawat dan mewariskannya.',
+    'Yang hilang dari sebuah komunitas sering kali bukan organisasinya, melainkan pengetahuan dan ruh yang menghidupinya.'
   ]
 }
 
@@ -181,39 +183,6 @@ const roles = [
   'Mengembangkan dan mengelola program.'
 ]
 
-const principles = [
-  {
-    number: '01',
-    title: 'Inklusif & Lintas Generasi',
-    description: 'Membuka ruang untuk semua: dari seniman, pelajar, peneliti, budayawan, hingga komunitas grassroot yang ingin berpartisipasi aktif.'
-  },
-  {
-    number: '02',
-    title: 'Berbasis Komunitas',
-    description: 'Menghormati inisiatif lokal, pengetahuan komunitas, dan kebijaksanaan yang telah berkembang dalam komunitas.'
-  },
-  {
-    number: '03',
-    title: 'Kolaboratif & Berjejaring',
-    description: 'Membangun sinergi dengan berbagai stakeholder: kampus, sekolah, lembaga budaya, organisasi sosial, dan komunitas.'
-  },
-  {
-    number: '04',
-    title: 'Inovasi Berkelanjutan',
-    description: 'Menggabungkan kebijaksanaan tradisional dengan inovasi kontemporer untuk menciptakan cara baru dalam berbudaya.'
-  },
-  {
-    number: '05',
-    title: 'Transparansi & Akuntabilitas',
-    description: 'Beroperasi dengan transparansi penuh, akuntabel kepada komunitas, dan berkomitmen pada pembelajaran berkelanjutan.'
-  },
-  {
-    number: '06',
-    title: 'Keberlanjutan & Keadilan',
-    description: 'Memastikan praktik yang ramah lingkungan, adil, dan berkelanjutan dalam semua aspek kegiatan kami.'
-  }
-]
-
 const badanPengurus: Member[] = [
   {
     name: 'Zulfan Arif',
@@ -275,6 +244,19 @@ function MemberCard({ member }: { member: Member }) {
 }
 
 
+function DetailList({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div>
+      <h3 className="font-semibold text-foreground mb-2">{title}</h3>
+      <ul className="space-y-1 text-muted-foreground leading-relaxed">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 function PerihalKamiContent() {
   return (
     <>
@@ -297,57 +279,27 @@ function PerihalKamiContent() {
         <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-foreground mb-8">Mengapa Afternuun Didirikan?</h2>
-            <div className="space-y-6">
-              {whyEstablished.paragraphs.map((paragraph, idx) => (
-                <p key={idx} className="text-lg text-muted-foreground leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2 mt-12">
-              {challenges.map((challenge) => (
-                <Card key={challenge.title} className="border-border">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{challenge.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 text-muted-foreground leading-relaxed">
-                      {challenge.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <p className="text-lg font-semibold text-primary mt-8">
-              Keduanya berujung pada terputusnya transmisi pengalaman dan pengetahuan antargenerasi.
-            </p>
-          </div>
-        </section>
-
-        {/* Memory Section */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Memori, Nilai, dan Ruh</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Yang hilang dari sebuah komunitas sering kali bukan organisasinya, melainkan pengetahuan dan ruh yang menghidupinya.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                {whyEstablished.paragraphs.map((paragraph, idx) => (
+                  <p key={idx} className="text-lg text-muted-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              <div>
+                <p className="text-lg text-foreground font-semibold mb-6">
                   Yang ingin kita jaga bukan sekadar nama atau sejarah masa lalu, melainkan:
                 </p>
+                <ul className="space-y-4 text-lg text-muted-foreground">
+                  {preserved.map((item) => (
+                    <li key={item} className="flex gap-4">
+                      <span className="font-bold text-primary flex-shrink-0">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-4 text-lg text-foreground">
-                {preserved.map((item) => (
-                  <li key={item} className="flex gap-4">
-                    <span className="font-bold text-primary flex-shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </section>
@@ -416,25 +368,6 @@ function PerihalKamiContent() {
               </Card>
             </div>
 
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Dimensi</TableHead>
-                  <TableHead className="text-primary">Perkumpulan</TableHead>
-                  <TableHead>Yayasan</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {legalForms.map((row) => (
-                  <TableRow key={row.dimension}>
-                    <TableCell className="font-medium text-foreground whitespace-normal min-w-32">{row.dimension}</TableCell>
-                    <TableCell className="text-foreground whitespace-normal min-w-56">{row.perkumpulan}</TableCell>
-                    <TableCell className="text-muted-foreground whitespace-normal min-w-56">{row.yayasan}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-
             <div className="mt-12 text-center space-y-2">
               <p className="text-muted-foreground leading-relaxed">
                 Afternuun bukan untuk mengelola aset atau menjalankan lembaga hierarkis, melainkan ruang kolektif warga lintas generasi untuk belajar, berkarya, dan berjejaring.
@@ -443,63 +376,6 @@ function PerihalKamiContent() {
                 Kita tidak membutuhkan pengelola aset. Kita membutuhkan penjaga ruh organisasi.
               </p>
             </div>
-          </div>
-        </section>
-
-        {/* Foundation Section */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border">
-          <div className="mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Fondasi Ekosistem Afternuun</h2>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              {foundations.map((foundation) => (
-                <Card key={foundation.title} className="border-border">
-                  <CardHeader>
-                    <CardTitle className="text-lg text-primary">{foundation.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 text-muted-foreground leading-relaxed">
-                      {foundation.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Partnership Section */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
-          <div className="mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Kemitraan dan Saling Penguatan</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Hubungan simbiotis, bukan substitusi. Afternuun hadir sebagai ruang penopang di luar keterbatasan struktural kampus.
-              </p>
-            </div>
-
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Dimensi</TableHead>
-                  <TableHead>Sanggar Nuun</TableHead>
-                  <TableHead className="text-primary">Afternuun</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {partnership.map((row) => (
-                  <TableRow key={row.dimension}>
-                    <TableCell className="font-medium text-foreground whitespace-normal min-w-28">{row.dimension}</TableCell>
-                    <TableCell className="text-muted-foreground whitespace-normal min-w-40">{row.sanggarNuun}</TableCell>
-                    <TableCell className="text-foreground whitespace-normal min-w-40">{row.afternuun}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
           </div>
         </section>
 
@@ -538,117 +414,133 @@ function PerihalKamiContent() {
           </div>
         </section>
 
-        {/* Network Section */}
+        {/* Details Section */}
         <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border bg-muted/20">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Simpul Perjumpaan yang Meluas</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Afternuun tidak hanya ditujukan bagi internal warga Sanggar Nuun, baik mahasiswa maupun alumni. Ia dirancang sebagai simpul terbuka yang mempertemukan berbagai unsur dalam satu ruang kolaborasi, berakar pada perhatian yang sama terhadap seni dan kebudayaan.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {networkActors.map((actor) => (
-                <span key={actor} className="rounded-full border border-border px-4 py-2 text-sm text-foreground">
-                  {actor}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Impact Section */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border">
-          <div className="mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Dari Karya Menuju Dampak</h2>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2">
-              <Card className="border-border">
-                <CardHeader>
-                  <CardTitle className="text-lg">Target Output Tiga Tahun Pertama</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-muted-foreground leading-relaxed">
-                    {outputs.map((item) => (
-                      <li key={item}>{item}</li>
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Selengkapnya tentang Afternuun</h2>
+            <Accordion type="multiple">
+              <AccordionItem value="tantangan">
+                <AccordionTrigger className="text-base">Tantangan yang Dihadapi</AccordionTrigger>
+                <AccordionContent className="space-y-6 text-base">
+                  <div className="grid gap-6 md:grid-cols-2">
+                    {challenges.map((challenge) => (
+                      <DetailList key={challenge.title} title={challenge.title} items={challenge.items} />
                     ))}
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card className="border-primary/20">
-                <CardHeader>
-                  <CardTitle className="text-lg text-primary">Outcome Jangka Panjang</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-muted-foreground leading-relaxed">
-                    {outcomes.map((item) => (
-                      <li key={item}>{item}</li>
+                  </div>
+                  <p className="font-semibold text-primary">
+                    Keduanya berujung pada terputusnya transmisi pengalaman dan pengetahuan antargenerasi.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="perkumpulan-yayasan">
+                <AccordionTrigger className="text-base">Perkumpulan dan Yayasan</AccordionTrigger>
+                <AccordionContent className="text-base">
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Dimensi</TableHead>
+                          <TableHead className="text-primary">Perkumpulan</TableHead>
+                          <TableHead>Yayasan</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {legalForms.map((row) => (
+                          <TableRow key={row.dimension}>
+                            <TableCell className="font-medium text-foreground whitespace-normal min-w-32">{row.dimension}</TableCell>
+                            <TableCell className="text-foreground whitespace-normal min-w-56">{row.perkumpulan}</TableCell>
+                            <TableCell className="text-muted-foreground whitespace-normal min-w-56">{row.yayasan}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="fondasi">
+                <AccordionTrigger className="text-base">Fondasi Ekosistem Afternuun</AccordionTrigger>
+                <AccordionContent className="text-base">
+                  <div className="grid gap-6 md:grid-cols-3">
+                    {foundations.map((foundation) => (
+                      <DetailList key={foundation.title} title={foundation.title} items={foundation.items} />
                     ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Roadmap Section */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Peta Jalan Pengembangan</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Tiga tahun pertama Afternuun, dari fondasi menuju ekspansi.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              {roadmap.map((step) => (
-                <Card key={step.year} className="border-border">
-                  <CardHeader>
-                    <p className="text-sm font-medium text-primary">{step.year}</p>
-                    <CardTitle className="text-lg">{step.phase}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Principles Section */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8 bg-muted/20">
-          <div className="mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Prinsip Dasar</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Prinsip-prinsip ini memandu setiap keputusan dan aksi kami dalam membangun gerakan budaya yang bermakna.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {principles.map((principle) => (
-                <div key={principle.number} className="flex gap-6 pb-6 border-b border-border last:border-0">
-                  <div className="text-4xl font-bold text-primary flex-shrink-0 w-16">
-                    {principle.number}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">{principle.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {principle.description}
-                    </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="kemitraan">
+                <AccordionTrigger className="text-base">Kemitraan dengan Sanggar Nuun</AccordionTrigger>
+                <AccordionContent className="space-y-6 text-base">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Hubungan simbiotis, bukan substitusi. Afternuun hadir sebagai ruang penopang di luar keterbatasan struktural kampus.
+                  </p>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Dimensi</TableHead>
+                        <TableHead>Sanggar Nuun</TableHead>
+                        <TableHead className="text-primary">Afternuun</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {partnership.map((row) => (
+                        <TableRow key={row.dimension}>
+                          <TableCell className="font-medium text-foreground whitespace-normal min-w-28">{row.dimension}</TableCell>
+                          <TableCell className="text-muted-foreground whitespace-normal min-w-40">{row.sanggarNuun}</TableCell>
+                          <TableCell className="text-foreground whitespace-normal min-w-40">{row.afternuun}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="jejaring">
+                <AccordionTrigger className="text-base">Simpul Perjumpaan yang Meluas</AccordionTrigger>
+                <AccordionContent className="space-y-6 text-base">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Afternuun tidak hanya ditujukan bagi internal warga Sanggar Nuun, baik mahasiswa maupun alumni. Ia dirancang sebagai simpul terbuka yang mempertemukan berbagai unsur dalam satu ruang kolaborasi, berakar pada perhatian yang sama terhadap seni dan kebudayaan.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {networkActors.map((actor) => (
+                      <span key={actor} className="rounded-full border border-border px-4 py-2 text-sm text-foreground">
+                        {actor}
+                      </span>
+                    ))}
                   </div>
-                </div>
-              ))}
-            </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="dampak">
+                <AccordionTrigger className="text-base">Dari Karya Menuju Dampak</AccordionTrigger>
+                <AccordionContent className="text-base">
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <DetailList title="Target Output Tiga Tahun Pertama" items={outputs} />
+                    <DetailList title="Outcome Jangka Panjang" items={outcomes} />
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="peta-jalan">
+                <AccordionTrigger className="text-base">Peta Jalan Pengembangan</AccordionTrigger>
+                <AccordionContent className="text-base">
+                  <div className="grid gap-6 md:grid-cols-3">
+                    {roadmap.map((step) => (
+                      <div key={step.year}>
+                        <p className="text-sm font-medium text-primary">{step.year}</p>
+                        <h3 className="font-semibold text-foreground mb-2">{step.phase}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </section>
 
         {/* Team Section */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <section className="px-4 py-20 sm:px-6 lg:px-8 border-b border-border">
           <div className="mx-auto max-w-6xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-foreground mb-4">Pengurus & Pengawas</h2>
@@ -680,7 +572,7 @@ function PerihalKamiContent() {
         </section>
 
         {/* Legal Section */}
-        <section className="px-4 py-20 sm:px-6 lg:px-8 border-t border-border bg-muted/20">
+        <section className="px-4 py-20 sm:px-6 lg:px-8 bg-muted/20">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-foreground mb-8">Legalitas</h2>
             <dl className="grid gap-6 md:grid-cols-2">
