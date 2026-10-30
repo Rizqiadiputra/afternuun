@@ -136,7 +136,7 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <Button variant="outline" size="sm" className="w-full gap-2">
-                      Lihat Semua Acara
+                      Lihat Program
                       <ArrowRight className="h-4 w-4" />
                     </Button>
                   </CardContent>
