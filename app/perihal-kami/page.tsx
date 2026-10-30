@@ -223,7 +223,8 @@ const badanPengurus: Member[] = [
   {
     name: 'Zusdi Furi Arianto',
     role: 'Sekretaris',
-    image: 'https://res.cloudinary.com/rizqiadiputra/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1780322333/rian_m8wx5k.jpg'
+    image: '/images/pengurus/zusdi-furi-arianto.jpg',
+    imagePosition: 'center 5%'
   },
   {
     name: 'Istifadah Nur Rohmah',
@@ -234,10 +235,10 @@ const badanPengurus: Member[] = [
 ]
 
 const badanPengawas: Member[] = [
-  { name: 'Wahyudin, M.Hum', role: 'Ketua' },
-  { name: 'Ahmad Fauzan, M.Ag', role: 'Anggota' },
-  { name: 'Dr. H. Masngudi, M.E.I', role: 'Anggota' },
-  { name: 'Misbachul Munir, S.Hum', role: 'Anggota' }
+  { name: 'Wahyudin, M.Hum', role: 'Ketua', image: '/images/pengurus/wahyudin.jpg', imagePosition: 'center 20%' },
+  { name: 'Ahmad Fauzan, M.Ag', role: 'Anggota', image: '/images/pengurus/ahmad-fauzan.jpg', imagePosition: 'center 8%' },
+  { name: 'Dr. H. Masngudi, M.E.I', role: 'Anggota', image: '/images/pengurus/masngudi.jpg', imagePosition: 'center 20%' },
+  { name: 'Misbachul Munir, S.Hum', role: 'Anggota', image: '/images/pengurus/misbachul-munir.jpg', imagePosition: 'center 15%' }
 ]
 
 const legalInfo = [
