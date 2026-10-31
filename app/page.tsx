@@ -154,7 +154,7 @@ export default function Home() {
                 Program Unggulan
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Tiga mesin penggerak ekosistem Afternuun yang saling terhubung dan saling menguatkan.
+                Tiga program utama Afternuun yang saling terhubung dan saling menguatkan.
               </p>
             </div>
 
@@ -194,10 +194,10 @@ export default function Home() {
         <section className="bg-primary/10 px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-foreground mb-6">
-              Bergabunglah dengan Komunitas Kami
+              Mari Terus Terhubung
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Afternuun adalah ruang yang hanya dapat hidup apabila dirawat bersama. Pilih peran Anda dalam ekosistem ini: berkarya, berbagi memori, menjadi mentor, mengarsipkan, membuka jejaring, atau mengelola program.
+              Afternuun adalah ruang yang hanya dapat hidup apabila dirawat bersama. Ambil bagian dalam perjalanan Afternuun: berkarya, berbagi memori, menjadi mentor, mengarsipkan, membuka jejaring, atau mengelola program.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row justify-center">
               <Link href="/kontak">
